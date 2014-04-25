@@ -1,6 +1,6 @@
 === Contact Form Multi ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
+Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.8.1
@@ -66,7 +66,7 @@ We can fix some things for free for the users who provide translation of our plu
 
 = How can I add a contact form to my site? =
 
-Please insert the shortcode [contact_form id=] to a post or page.
+Please insert the shortcode [contact_form id=*] to a post or page.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
@@ -74,7 +74,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit?pli=1" target="_blank">System_Status.pdf</a>
+4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
 
 == Screenshots ==
 
