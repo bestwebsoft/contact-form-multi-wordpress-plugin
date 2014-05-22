@@ -4,7 +4,7 @@ Plugin Name: Contact Form Multi
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.0.6
+Version: 1.0.7
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -31,7 +31,8 @@ License: GPLv3 or later
 if ( ! function_exists( 'cntctfrmmlt_admin_menu' ) ) {
 	function cntctfrmmlt_admin_menu() {
 		global $bstwbsftwppdtplgns_options, $wpmu, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_version = '1.2.3';
+		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
+		$bws_menu_version = $bws_menu_info["Version"];
 		$base = plugin_basename(__FILE__);
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
@@ -317,6 +318,97 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 	}
 }
 
+if ( ! function_exists ( 'cntctfrmmlt_plugin_banner' ) ) {
+	function cntctfrmmlt_plugin_banner() {
+		global $hook_suffix;
+		if ( 'plugins.php' == $hook_suffix ) {   
+			global $wpmu, $cntctfrmmlt_plugin_info, $bstwbsftwppdtplgns_cookie_add;
+
+			$banner_array = array(
+				array( 'sndr_hide_banner_on_plugin_page', 'sender/sender.php', '0.5' ),
+				array( 'srrl_hide_banner_on_plugin_page', 'user-role/user-role.php', '1.4' ),				
+				array( 'pdtr_hide_banner_on_plugin_page', 'updater/updater.php', '1.12' ),
+				array( 'cntctfrmtdb_hide_banner_on_plugin_page', 'contact-form-to-db/contact_form_to_db.php', '1.2' ),
+				array( 'cntctfrmmlt_hide_banner_on_plugin_page', 'contact-form-multi/contact-form-multi.php', '1.0.7' ),	
+				array( 'gglmps_hide_banner_on_plugin_page', 'bws-google-maps/bws-google-maps.php', '1.2' ),		
+				array( 'fcbkbttn_hide_banner_on_plugin_page', 'facebook-button-plugin/facebook-button-plugin.php', '2.29' ),
+				array( 'twttr_hide_banner_on_plugin_page', 'twitter-plugin/twitter.php', '2.34' ),
+				array( 'pdfprnt_hide_banner_on_plugin_page', 'pdf-print/pdf-print.php', '1.7.1' ),
+				array( 'gglplsn_hide_banner_on_plugin_page', 'google-one/google-plus-one.php', '1.1.4' ),
+				array( 'gglstmp_hide_banner_on_plugin_page', 'google-sitemap-plugin/google-sitemap-plugin.php', '2.8.4' ),
+				array( 'cntctfrmpr_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-pro/contact_form_pro.php', '1.14' ),
+				array( 'cntctfrm_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.62' ),
+				array( 'cntctfrm_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.47' ),	
+				array( 'cptch_hide_banner_on_plugin_page', 'captcha/captcha.php', '3.8.4' ),
+				array( 'gllr_hide_banner_on_plugin_page', 'gallery-plugin/gallery-plugin.php', '3.9.1' )						
+			);
+			if ( ! $cntctfrmmlt_plugin_info )
+				$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
+
+			if ( ! function_exists( 'is_plugin_active_for_network' ) )
+				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+			$active_plugins = get_option( 'active_plugins' );			
+			$all_plugins = get_plugins();
+			$this_banner = 'cntctfrmmlt_hide_banner_on_plugin_page';
+			foreach ( $banner_array as $key => $value ) {
+				if ( $this_banner == $value[0] ) {
+					if ( ! isset( $bstwbsftwppdtplgns_cookie_add ) ) {
+						echo '<script type="text/javascript" src="' . plugins_url( 'js/c_o_o_k_i_e.js', __FILE__ ) . '"></script>';
+						$bstwbsftwppdtplgns_cookie_add = true;
+					}
+					if ( 0 < count( preg_grep( '/contact-form-pro\/contact_form_pro.php/', $active_plugins ) ) || is_plugin_active_for_network( 'contact-form-pro/contact_form_pro.php' ) ) {
+						global $wp_version; ?>
+						<script type="text/javascript">		
+							(function($) {
+								$(document).ready( function() {		
+									var hide_message = $.cookie( "cntctfrmmlt_hide_banner_on_plugin_page" );
+									if ( hide_message == "true") {
+										$( ".cntctfrmmlt_message" ).css( "display", "none" );
+									} else {
+										$( ".cntctfrmmlt_message" ).css( "display", "block" );
+									}
+									$( ".cntctfrmmlt_close_icon" ).click( function() {
+										$( ".cntctfrmmlt_message" ).css( "display", "none" );
+										$.cookie( "cntctfrmmlt_hide_banner_on_plugin_page", "true", { expires: 32 } );
+									});	
+								});
+							})(jQuery);				
+						</script>	
+						<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">				                      
+							<div class="cntctfrmmlt_message bws_banner_on_plugin_page" style="display: none;">
+								<img class="cntctfrmmlt_close_icon close_icon" title="" src="<?php echo plugins_url( 'images/close_banner.png', __FILE__ ); ?>" alt=""/>
+								<div class="button_div">
+									<a class="button" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-multi-pro/?k=93536843024dbb3360bfa9d6d6a1d297&pn=123&v=<?php echo $cntctfrmmlt_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Learn More', 'cntctfrmmlt' ); ?></a>				
+								</div>
+								<div class="text">
+									<?php _e( "It's time to upgrade your <strong>Contact Form Multi plugin</strong> to <strong>PRO</strong> version", 'cntctfrmmlt' ); ?>!<br />
+									<span><?php _e( 'Extend standard plugin functionality with new great options', 'cntctfrmmlt' ); ?></span>
+								</div> 
+								<div class="icon">			
+									<img title="" src="<?php echo plugins_url( 'images/banner.png', __FILE__ ); ?>" alt=""/>
+								</div>	
+							</div>  
+						</div>
+						<?php break;
+					} else { ?>
+						<script type="text/javascript">		
+							(function($) {
+								$(document).ready( function() {		
+									$.cookie( "cntctfrmmlt_hide_banner_on_plugin_page", "temporarily", { expires: 32 } );
+								});
+							})(jQuery);				
+						</script>
+					<?php }
+				}
+				if ( isset( $all_plugins[ $value[1] ] ) && $all_plugins[ $value[1] ]["Version"] >= $value[2] && ( 0 < count( preg_grep( '/' . str_replace( '/', '\/', $value[1] ) . '/', $active_plugins ) ) || is_plugin_active_for_network( $value[1] ) ) && ! isset( $_COOKIE[ $value[0] ] ) ) {
+					break;
+				}
+			}    
+		}
+	}
+}
+
 /*Function for delete options*/
 if ( ! function_exists ( 'cntctfrmmlt_delete' ) ) {
 	function cntctfrmmlt_delete() {
@@ -358,5 +450,7 @@ add_filter( 'plugin_row_meta', 'cntctfrmmlt_plugin_links', 10, 2 );
 add_action( 'admin_notices', 'cntctfrmmlt_show_notices' );
 /* hooks for ajax */
 add_action( 'wp_ajax_cntctfrmmlt_action', 'cntctfrmmlt_action_callback' );
+add_action( 'admin_notices', 'cntctfrmmlt_plugin_banner' );
 /*uninstal hook*/
 register_uninstall_hook( __FILE__, 'cntctfrmmlt_delete' );
+?>

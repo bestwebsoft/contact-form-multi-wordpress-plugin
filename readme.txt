@@ -1,10 +1,10 @@
 === Contact Form Multi ===
 Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
-Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
+Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
 Requires at least: 3.0
-Tested up to: 3.8.1
-Stable tag: 1.0.6
+Tested up to: 3.9.1
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,12 +14,16 @@ Add multiple contact forms to your WordPress website using the Contact Form plug
 
 This plugin makes it possible to create and implement multiple contact forms on your site. It is also possible to set different parameters for different contact forms. Please note that this plugin is an exclusive add-on to the Contact Form plugin and it will not work wothout it. Please make sure you've enabled Javascript, otherwise the plugin will not work.
 
+http://www.youtube.com/watch?v=BlmKUo9QQ5Y
+
 <a href="http://wordpress.org/plugins/contact-form-multi/faq/" target="_blank">FAQ</a>
 
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 <a href="http://bestwebsoft.com/plugin/contact-form-pro/?k=9731bbeeae59e0c2a563276580a4ecd9" target="_blank">Contact Form Pro</a> 
 <a href="http://wordpress.org/plugins/contact-form-plugin" target="_blank">Contact Form Plugin</a>
+
+<a href="http://bestwebsoft.com/plugin/contact-form-multi-pro?k=ca084ecca327503cef9ee2ae5a1f672e" target="_blank" title="Contact Form Multi Pro">Upgrade to Pro Version</a>
 
 = Features =
 
@@ -29,6 +33,7 @@ This plugin makes it possible to create and implement multiple contact forms on 
 = Translation =
 
 * Russian (ru_RU)
+* Ukrainian (uk)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -83,25 +88,32 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.7 - 22.05.2014 =
+* Update : We updated all functionality for wordpress 3.9.1.
+* NEW : The Ukrainian language file is added to the plugin.
+
 = V1.0.6 - 25.02.2014 =
-* Bugfix: Bug fixed (big fonts size on the Contact Form settings page)
+* Bugfix : Bug fixed (big fonts size on the Contact Form settings page)
 
 = V1.0.5 - 25.02.2014 =
-* Bugfix: Bug fixed(inability to add other languages)
+* Bugfix : Bug fixed(inability to add other languages)
 
 = V1.0.4 - 16.02.2014 =
-* NEW: The Russian translation was added.
+* NEW : The Russian translation was added.
 
 = V1.0.3 - 14.02.2014 =
 * NEW: The Contact Form Delete button was moved to the tab, the icon was changed.
 
 = V1.0.2 - 07.02.2014 =
-* NEW: The style of the forms' tabs was changed.
+* NEW : The style of the forms' tabs was changed.
 
 = V1.0.1 - 05.02.2014 =
-* NEW: The ability to change the tiltes of the forms was added.
+* NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.0.7 =
+We updated all functionality for wordpress 3.9.1. The Ukrainian language file is added to the plugin.
 
 = V1.0.6 =
 Bug fixed (big fonts size on the Contact Form settings page)
