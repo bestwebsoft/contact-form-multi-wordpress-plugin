@@ -51,6 +51,8 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin via the 'Plugins' menu in WordPress.
 3. Create a page or a post and insert the shortcode [contact_form id=you_form_id] into the text.
 
+<a href="https://docs.google.com/document/d/189LPZKN3tzn_eykAhI-3hAmaISHy272AcJfywDfwr4U/edit" target="_blank">View a PDF version of Step-by-step Instruction on Contact Form Multi Installation</a>.
+
 == Frequently Asked Questions ==
 
 = How can I add a new conatct form? =
