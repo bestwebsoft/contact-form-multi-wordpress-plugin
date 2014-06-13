@@ -53,6 +53,8 @@ We can fix some things for free for the users who provide translation of our plu
 
 <a href="https://docs.google.com/document/d/189LPZKN3tzn_eykAhI-3hAmaISHy272AcJfywDfwr4U/edit" target="_blank">View a PDF version of Step-by-step Instruction on Contact Form Multi Installation</a>.
 
+http://www.youtube.com/watch?v=msD6J_oSLNQ
+
 == Frequently Asked Questions ==
 
 = How can I add a new conatct form? =
