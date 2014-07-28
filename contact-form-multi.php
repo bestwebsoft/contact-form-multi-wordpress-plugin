@@ -4,7 +4,7 @@ Plugin Name: Contact Form Multi
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.0.7
+Version: 1.0.8
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -253,14 +253,15 @@ if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 if ( ! function_exists( 'cntctfrmmlt_script_var' ) ) {
 	function cntctfrmmlt_script_var() { 
 		$cntctfrmmlt_options_main = get_option( 'cntctfrmmlt_options_main' );
+		$site_url_if_multisite = is_multisite() ? site_url() : '';
 		/*Announcement variables javascripts*/?>
 		<script type="text/javascript">
 			var cntctfrmmlt_delete_message = "<?php _e( 'Are you sure you want to delete the form', 'contact-form-multi' ); ?>";
 			var cntctfrmmlt_id_form = "<?php echo $cntctfrmmlt_options_main['id_form']; ?>";
 			<?php if ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active_for_network( 'contact-form-plugin/contact_form.php' ) ) { ?>
-				var cntctfrmmlt_location = "<?php echo $_SERVER['PHP_SELF'] ?>?page=contact_form.php";
+				var cntctfrmmlt_location = "<?php echo $site_url_if_multisite . $_SERVER['PHP_SELF'] ?>?page=contact_form.php";
 			<?php } else { ?>
-				var cntctfrmmlt_location = "<?php echo $_SERVER['PHP_SELF'] ?>?page=contact_form_pro.php";
+				var cntctfrmmlt_location = "<?php echo $site_url_if_multisite . $_SERVER['PHP_SELF'] ?>?page=contact_form_pro.php";
 			<?php } ?>
 			var cntctfrmmlt_key_id = "<?php echo $cntctfrmmlt_options_main['next_id_form']; ?>";
 			var cntctfrmmlt_count = new Array();
@@ -310,8 +311,7 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 			<?php } ?>
 			<noscript>
 				<div class="error">
-					<p><?php _e( 'Please enable JavaScript!', 'contact-form-multi'); ?>
-					<a href="http://www.google.ru/support/bin/answer.py?answer=23852"><?php _e( 'How', 'contact-form-multi'); ?>?</a></p>
+					<p><?php _e( 'Please enable JavaScript in your browser!', 'contact-form-multi'); ?></p>
 				</div>
 			</noscript>
 		<?php } 

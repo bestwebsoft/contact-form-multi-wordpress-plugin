@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,9 +12,11 @@ Add multiple contact forms to your WordPress website using the Contact Form plug
 
 == Description ==
 
-This plugin makes it possible to create and implement multiple contact forms on your site. It is also possible to set different parameters for different contact forms. Please note that this plugin is an exclusive add-on to the Contact Form plugin and it will not work wothout it. Please make sure you've enabled Javascript, otherwise the plugin will not work.
+This plugin makes it possible to create and implement multiple contact forms on your site. It is also possible to set different parameters for different contact forms. Please note that this plugin is an exclusive add-on to the Contact Form plugin and it will not work without it. Please make sure you've enabled Javascript, otherwise the plugin will not work.
 
 http://www.youtube.com/watch?v=BlmKUo9QQ5Y
+
+<a href="http://www.youtube.com/watch?v=msD6J_oSLNQ" target="_blank">Video instruction on Installation</a>
 
 <a href="http://wordpress.org/plugins/contact-form-multi/faq/" target="_blank">FAQ</a>
 
@@ -57,7 +59,7 @@ http://www.youtube.com/watch?v=msD6J_oSLNQ
 
 == Frequently Asked Questions ==
 
-= How can I add a new conatct form? =
+= How can I add a new contact form? =
 
 1. Please go to the Contact Form plugin main page and click the + button.
 2. Fill out all the fields that are necessary to be displayed in the form on a page or in a post.
@@ -92,6 +94,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.8 - 23.07.2014 =
+* Bugfix : Form tabs switching on mutlisite.
+* Bugfix : The invalid link was removed.
+* Bugfix : Tabs display on the settings page was corrected.
+
 = V1.0.7 - 22.05.2014 =
 * Update : We updated all functionality for wordpress 3.9.1.
 * NEW : The Ukrainian language file is added to the plugin.
@@ -115,6 +122,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.0.8 =
+Form tabs switching on mutlisite. The invalid link was removed. Tabs display on the settings page was corrected.
 
 = V1.0.7 =
 We updated all functionality for wordpress 3.9.1. The Ukrainian language file is added to the plugin.
