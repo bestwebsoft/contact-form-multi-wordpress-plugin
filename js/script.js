@@ -25,10 +25,11 @@
 			}
 			var data = {
 				action: 'cntctfrmmlt_action',
+				cntctfrmmlt_ajax_nonce_field: cntctfrmmlt_ajax.cntctfrmmlt_nonce,
 				cntctfrmmlt_name_form: cntctfrmmlt_name
 			};
 			jQuery.post( ajaxurl, data, function( response ) {
-				document.location.href=cntctfrmmlt_location +"&id="+cntctfrmmlt_id_form;
+				document.location.href = cntctfrmmlt_location +"&id="+cntctfrmmlt_id_form;
 			});
 		});
 
@@ -43,16 +44,17 @@
 			cntctfrmmlt_idd = cntctfrmmlt_key_id;
 			var data = {
 				action: 'cntctfrmmlt_action',
+				cntctfrmmlt_ajax_nonce_field: cntctfrmmlt_ajax.cntctfrmmlt_nonce,
 				cntctfrmmlt_name_form: cntctfrmmlt_name,
 				cntctfrmmlt_key_form: cntctfrmmlt_idd
 			};
 			jQuery.post( ajaxurl, data, function( response ) {
-				document.location.href=cntctfrmmlt_location;
+				document.location.href = cntctfrmmlt_location;
 			});
 		});
 		$( 'input[class="cntctfrmmlt-delete"]' ).click( function() {
 			if ( confirm( cntctfrmmlt_delete_message ) ) {
-				document.location.href=cntctfrmmlt_location + "&del=" + $( this ).attr( 'name' ) +"&id=" + $( this ).parent( 'li' ).attr( 'id' );	
+				document.location.href = cntctfrmmlt_location + "&del=" + $( this ).attr( 'name' ) +"&id=" + $( this ).parent( 'li' ).attr( 'id' );	
 			}
 		});
 

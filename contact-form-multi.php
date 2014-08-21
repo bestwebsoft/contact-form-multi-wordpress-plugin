@@ -4,7 +4,7 @@ Plugin Name: Contact Form Multi
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.0.8
+Version: 1.0.9
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -124,10 +124,7 @@ if ( ! function_exists( 'cntctfrmmlt_settings_defaults' ) ) {
 				add_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main, '', 'yes' );	
 		}
 		/* Get options from the database */
-		if ( 1 == $wpmu )
-			$cntctfrmmlt_options = get_site_option( 'cntctfrmmlt_options_main' );
-		else
-			$cntctfrmmlt_options = get_option( 'cntctfrmmlt_options_main' );
+		$cntctfrmmlt_options = ( 1 == $wpmu ) ? get_site_option( 'cntctfrmmlt_options_main' ) : get_option( 'cntctfrmmlt_options_main' );
 
 		if ( ! isset( $cntctfrmmlt_options['plugin_option_version'] ) || $cntctfrmmlt_options['plugin_option_version'] != $cntctfrmmlt_plugin_info["Version"] ) {
 			$cntctfrmmlt_options = array_merge( $cntctfrmmlt_options_main, $cntctfrmmlt_options );
@@ -213,6 +210,7 @@ if ( ! function_exists ( 'cntctfrmmlt_plugin_links' ) ) {
 if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 	function cntctfrmmlt_action_callback() {
 		global $cntctfrmmlt_counts, $cntctfrmmlt_j, $cntctfrmmlt_key_form, $cntctfrmmlt_value, $cntctfrmmlt_id_key, $cntctfrmmlt_options_main;
+		check_ajax_referer( plugin_basename( __FILE__ ), 'cntctfrmmlt_ajax_nonce_field' );
 		$cntctfrmmlt_options_main = get_option( 'cntctfrmmlt_options_main' );
 		/*update next_id_form, cntctfrmmlt_id_options*/
 		if ( isset( $_POST['cntctfrmmlt_key_form'] ) ) {
@@ -246,6 +244,7 @@ if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 				wp_enqueue_style( 'cntctfrmml_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 			
 			wp_enqueue_script( 'cntctfrmmlt_script', plugins_url( 'js/script.js', __FILE__ ) );
+			wp_localize_script( 'cntctfrmmlt_script', 'cntctfrmmlt_ajax', array( 'cntctfrmmlt_nonce' => wp_create_nonce( plugin_basename( __FILE__ ), 'cntctfrmmlt_ajax_nonce_field' ) ) );
 		}
 	}
 }
@@ -325,6 +324,7 @@ if ( ! function_exists ( 'cntctfrmmlt_plugin_banner' ) ) {
 			global $wpmu, $cntctfrmmlt_plugin_info, $bstwbsftwppdtplgns_cookie_add;
 
 			$banner_array = array(
+				array( 'lmtttmpts_hide_banner_on_plugin_page', 'limit-attempts/limit-attempts.php', '1.0.2' ),
 				array( 'sndr_hide_banner_on_plugin_page', 'sender/sender.php', '0.5' ),
 				array( 'srrl_hide_banner_on_plugin_page', 'user-role/user-role.php', '1.4' ),				
 				array( 'pdtr_hide_banner_on_plugin_page', 'updater/updater.php', '1.12' ),

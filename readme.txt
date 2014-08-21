@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
 Requires at least: 3.0
-Tested up to: 3.9.1
-Stable tag: 1.0.8
+Tested up to: 4.0-beta3
+Stable tag: 1.0.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -94,6 +94,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.9 - 21.08.2014 =
+* Update : We updated all functionality for wordpress 4.0-beta3.
+* Bugfix : Security Exploit was fixed.
+
 = V1.0.8 - 23.07.2014 =
 * Bugfix : Form tabs switching on mutlisite.
 * Bugfix : The invalid link was removed.
@@ -122,6 +126,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.0.9 =
+We updated all functionality for wordpress 4.0-beta3. Security Exploit was fixed.
 
 = V1.0.8 =
 Form tabs switching on mutlisite. The invalid link was removed. Tabs display on the settings page was corrected.
