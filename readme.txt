@@ -3,7 +3,7 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
 Requires at least: 3.0
-Tested up to: 4.0-beta3
+Tested up to: 4.0
 Stable tag: 1.0.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
