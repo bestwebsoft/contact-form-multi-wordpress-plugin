@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.0.9
+Tested up to: 4.1
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,10 +22,10 @@ http://www.youtube.com/watch?v=BlmKUo9QQ5Y
 
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
-<a href="http://bestwebsoft.com/plugin/contact-form-pro/?k=9731bbeeae59e0c2a563276580a4ecd9" target="_blank">Contact Form Pro</a> 
+<a href="http://bestwebsoft.com/products/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9" target="_blank">Contact Form Pro</a> 
 <a href="http://wordpress.org/plugins/contact-form-plugin" target="_blank">Contact Form Plugin</a>
 
-<a href="http://bestwebsoft.com/plugin/contact-form-multi-pro?k=ca084ecca327503cef9ee2ae5a1f672e" target="_blank" title="Contact Form Multi Pro">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/products/contact-form-multi/?k=ca084ecca327503cef9ee2ae5a1f672e" target="_blank" title="Contact Form Multi Pro">Upgrade to Pro Version</a>
 
 = Features =
 
@@ -94,6 +94,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.1.0 - 05.01.2015 =
+* Update : BWS plugins section is updated.
+* Update : We updated all functionality for wordpress 4.1.
+
 = V1.0.9 - 21.08.2014 =
 * Update : We updated all functionality for wordpress 4.0-beta3.
 * Bugfix : Security Exploit was fixed.
@@ -126,6 +130,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.1.0 =
+BWS plugins section is updated. We updated all functionality for wordpress 4.1.
 
 = V1.0.9 =
 We updated all functionality for wordpress 4.0-beta3. Security Exploit was fixed.
