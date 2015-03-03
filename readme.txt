@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
-Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.1.0
+Requires at least: 3.1
+Tested up to: 4.1.1
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -89,17 +89,21 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Screenshots ==
 
-1. The Contact Form plugin settings page with a button to add a new contact form.
-2. The Contact Form plugin settings page with a newly created contact form.
+1. The Contact Form plugin settings page with a newly created contact form.
+2. The Contact Form plugin additional settings tab with a newly created contact form.
 
 == Changelog ==
 
+= V1.1.1 - 02.03.2015 =
+* Update : We updated all functionality for new design of Conact Form plugin settings page.
+* Update : We updated all functionality for Wordpress 4.1.1.
+
 = V1.1.0 - 05.01.2015 =
 * Update : BWS plugins section is updated.
-* Update : We updated all functionality for wordpress 4.1.
+* Update : We updated all functionality for Wordpress 4.1.
 
 = V1.0.9 - 21.08.2014 =
-* Update : We updated all functionality for wordpress 4.0-beta3.
+* Update : We updated all functionality for Wordpress 4.0-beta3.
 * Bugfix : Security Exploit was fixed.
 
 = V1.0.8 - 23.07.2014 =
@@ -131,11 +135,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Upgrade Notice ==
 
+= V1.1.1 =
+We updated all functionality for new design of Conact Form plugin settings page. We updated all functionality for Wordpress 4.1.1.
+
 = V1.1.0 =
-BWS plugins section is updated. We updated all functionality for wordpress 4.1.
+BWS plugins section is updated. We updated all functionality for Wordpress 4.1.
 
 = V1.0.9 =
-We updated all functionality for wordpress 4.0-beta3. Security Exploit was fixed.
+We updated all functionality for Wordpress 4.0-beta3. Security Exploit was fixed.
 
 = V1.0.8 =
 Form tabs switching on mutlisite. The invalid link was removed. Tabs display on the settings page was corrected.
