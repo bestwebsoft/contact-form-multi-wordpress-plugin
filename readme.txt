@@ -1,10 +1,10 @@
-=== Contact Form Multi ===
+=== Contact Form Multi by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
 Requires at least: 3.1
-Tested up to: 4.1.1
-Stable tag: 1.1.1
+Tested up to: 4.2.1
+Stable tag: 1.1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -82,6 +82,7 @@ Please insert the shortcode [contact_form id=*] to a post or page.
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
 Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
@@ -93,6 +94,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 2. The Contact Form plugin additional settings tab with a newly created contact form.
 
 == Changelog ==
+
+= V1.1.2 - 05.05.2015 =
+* Update : We updated all functionality for Wordpress 4.2.1.
 
 = V1.1.1 - 02.03.2015 =
 * Update : We updated all functionality for new design of Conact Form plugin settings page.
@@ -134,6 +138,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.1.2 =
+We updated all functionality for Wordpress 4.2.1.
 
 = V1.1.1 =
 We updated all functionality for new design of Conact Form plugin settings page. We updated all functionality for Wordpress 4.1.1.

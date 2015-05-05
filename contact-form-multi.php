@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Contact Form Multi
+Plugin Name: Contact Form Multi by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.1.1
+Version: 1.1.2
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -30,63 +30,26 @@ License: GPLv3 or later
 */
 if ( ! function_exists( 'cntctfrmmlt_admin_menu' ) ) {
 	function cntctfrmmlt_admin_menu() {
-		global $bstwbsftwppdtplgns_options, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
-		$bws_menu_version = $bws_menu_info["Version"];
-		$base = plugin_basename(__FILE__);
-
-		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
-			if ( is_multisite() ) {
-				if ( ! get_site_option( 'bstwbsftwppdtplgns_options' ) )
-					add_site_option( 'bstwbsftwppdtplgns_options', array() );
-				$bstwbsftwppdtplgns_options = get_site_option( 'bstwbsftwppdtplgns_options' );
-			} else {
-				if ( ! get_option( 'bstwbsftwppdtplgns_options' ) )
-					add_option( 'bstwbsftwppdtplgns_options', array() );
-				$bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
-			}
-		}
-
-		if ( isset( $bstwbsftwppdtplgns_options['bws_menu_version'] ) ) {
-			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
-			unset( $bstwbsftwppdtplgns_options['bws_menu_version'] );
-			if ( is_multisite() )
-				update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			else
-				update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-		} else if ( ! isset( $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] ) || $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] < $bws_menu_version ) {
-			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
-			if ( is_multisite() )
-				update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			else
-				update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-		} else if ( ! isset( $bstwbsftwppdtplgns_added_menu ) ) {
-			$plugin_with_newer_menu = $base;
-			foreach ( $bstwbsftwppdtplgns_options['bws_menu']['version'] as $key => $value ) {
-				if ( $bws_menu_version < $value && is_plugin_active( $base ) ) {
-					$plugin_with_newer_menu = $key;
-				}
-			}
-			$plugin_with_newer_menu = explode( '/', $plugin_with_newer_menu );
-			$wp_content_dir = defined( 'WP_CONTENT_DIR' ) ? basename( WP_CONTENT_DIR ) : 'wp-content';
-			if ( file_exists( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' ) )
-				require_once( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' );
-			else
-				require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );	
-			$bstwbsftwppdtplgns_added_menu = true;
-		}
-
-		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 ); 
+		bws_add_general_menu( plugin_basename( __FILE__ ) );
 	}
 }
 
 /*Function for connecting hooks-(init, admin_init)*/
 if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 	function cntctfrmmlt_init() {
+		global $cntctfrmmlt_plugin_info;
+		/* add language files. */
+		load_plugin_textdomain( 'contact-form-multi', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_functions.php' );
+		
+		if ( empty( $cntctfrmmlt_plugin_info ) ) {
+			if ( ! function_exists( 'get_plugin_data' ) )
+				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
+		}
 		/* Function check if plugin is compatible with current WP version  */
-		cntctfrmmlt_version_check();
+		bws_wp_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, "3.1" );
 	}
 }
 
@@ -94,16 +57,10 @@ if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 if ( ! function_exists( 'cntctfrmmlt_admin_init' ) ) {
 	function cntctfrmmlt_admin_init() {
 		global $bws_plugin_info, $cntctfrmmlt_plugin_info;
-		/* add language files. */
-		load_plugin_textdomain( 'contact-form-multi', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
-
-		if ( ! $cntctfrmmlt_plugin_info )
-			$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
 
 		/* Add variable for bws_menu */
 		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '123', 'version' => $cntctfrmmlt_plugin_info["Version"] );
-
 
 		/* check for installed and activated Contact Form*/
 		cntctfrmmlt_check();
@@ -130,7 +87,7 @@ if ( ! function_exists( 'cntctfrmmlt_settings_defaults' ) ) {
 		);
 		/*add options to database*/
 		if ( ! get_option( 'cntctfrmmlt_options_main' ) )
-			add_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main, '', 'yes' );	
+			add_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );	
 
 		/* Get options from the database */
 		$cntctfrmmlt_options = get_option( 'cntctfrmmlt_options_main' );
@@ -156,7 +113,7 @@ if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 			$_SESSION['cntctfrmmlt_id_form'] = $_GET['id'];
 		
 		$cntctfrmmlt_options_main['id_form'] = $_SESSION['cntctfrmmlt_id_form'];
-		update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main, '', 'yes' );
+		update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
 		
 		/*Deleting data from the database after pressing the delete*/
 		if ( isset( $_GET['del'] ) ) {
@@ -175,33 +132,14 @@ if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 			$cntctfrmmlt_keys = array_keys( $cntctfrmmlt_options_main['name_id_form'] );
 			$cntctfrmmlt_last_key = end( $cntctfrmmlt_keys );
 			$cntctfrmmlt_options_main['id_form'] = $cntctfrmmlt_last_key;
-			update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main, '', 'yes' );
+			update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
 			$_SESSION['cntctfrmmlt_id_form'] = $cntctfrmmlt_last_key;
 			if ( empty( $cntctfrmmlt_options_main['name_id_form'] ) ) {
 				$cntctfrmmlt_options_main['id_form'] = 1;
 				$cntctfrmmlt_options_main['name_id_form'] = array( 1 => 'NEW_FORM' );
 				$cntctfrmmlt_options_main['next_id_form'] = 2;
-				update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main, '', 'yes' );
+				update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
 				$_SESSION['cntctfrmmlt_id_form'] = 1;
-			}
-		}
-	}
-}
-
-/*function check if plugin is compatible with current WP version*/  
-if ( ! function_exists ( 'cntctfrmmlt_version_check' ) ) {
-	function cntctfrmmlt_version_check() {
-		global $wp_version, $cntctfrmmlt_plugin_info;
-		$require_wp		=	"3.1"; /* Wordpress at least requires version */
-		$plugin			=	plugin_basename( __FILE__ );
-	 	if ( version_compare( $wp_version, $require_wp, "<" ) ) {
-	 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-			if ( is_plugin_active( $plugin ) ) {
-				deactivate_plugins( $plugin );
-				$admin_url = ( function_exists( 'get_admin_url' ) ) ? get_admin_url( null, 'plugins.php' ) : esc_url( '/wp-admin/plugins.php' );
-				if ( ! $cntctfrmmlt_plugin_info )
-					$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__, false );
-				wp_die( "<strong>" . $cntctfrmmlt_plugin_info['Name'] . " </strong> " . __( 'requires', 'contact-form-multi' ) . " <strong>WordPress " . $require_wp . "</strong> " . __( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'contact-form-multi') . "<br /><br />" . __( 'Back to the WordPress', 'contact-form-multi') . " <a href='" . $admin_url . "'>" . __( 'Plugins page', 'contact-form-multi') . "</a>." );
 			}
 		}
 	}
@@ -241,7 +179,7 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 				$cntctfrmmlt_options_main['name_id_form'] = $cntctfrmmlt_counts;
 			}
 		}
-		update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main, '', 'yes' );
+		update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
 		exit;
 	}
 }
@@ -329,93 +267,9 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 if ( ! function_exists ( 'cntctfrmmlt_plugin_banner' ) ) {
 	function cntctfrmmlt_plugin_banner() {
 		global $hook_suffix;
-		if ( 'plugins.php' == $hook_suffix ) {   
-			global $cntctfrmmlt_plugin_info, $bstwbsftwppdtplgns_cookie_add;
-
-			$banner_array = array(
-				array( 'gglnltcs_hide_banner_on_plugin_page', 'bws-google-analytics/bws-google-analytics.php', '1.6.2' ),
-				array( 'htccss_hide_banner_on_plugin_page', 'htaccess/htaccess.php', '1.6.3' ),
-				array( 'sbscrbr_hide_banner_on_plugin_page', 'subscriber/subscriber.php', '1.1.8' ),
-				array( 'lmtttmpts_hide_banner_on_plugin_page', 'limit-attempts/limit-attempts.php', '1.0.2' ),
-				array( 'sndr_hide_banner_on_plugin_page', 'sender/sender.php', '0.5' ),
-				array( 'srrl_hide_banner_on_plugin_page', 'user-role/user-role.php', '1.4' ),
-				array( 'pdtr_hide_banner_on_plugin_page', 'updater/updater.php', '1.12' ),
-				array( 'cntctfrmtdb_hide_banner_on_plugin_page', 'contact-form-to-db/contact_form_to_db.php', '1.2' ),
-				array( 'cntctfrmmlt_hide_banner_on_plugin_page', 'contact-form-multi/contact-form-multi.php', '1.0.7' ),
-				array( 'gglmps_hide_banner_on_plugin_page', 'bws-google-maps/bws-google-maps.php', '1.2' ),
-				array( 'fcbkbttn_hide_banner_on_plugin_page', 'facebook-button-plugin/facebook-button-plugin.php', '2.29' ),
-				array( 'twttr_hide_banner_on_plugin_page', 'twitter-plugin/twitter.php', '2.34' ),
-				array( 'pdfprnt_hide_banner_on_plugin_page', 'pdf-print/pdf-print.php', '1.7.1' ),
-				array( 'gglplsn_hide_banner_on_plugin_page', 'google-one/google-plus-one.php', '1.1.4' ),
-				array( 'gglstmp_hide_banner_on_plugin_page', 'google-sitemap-plugin/google-sitemap-plugin.php', '2.8.4' ),
-				array( 'cntctfrmpr_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-pro/contact_form_pro.php', '1.14' ),
-				array( 'cntctfrm_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.62' ),
-				array( 'cntctfrm_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.47' ),
-				array( 'cptch_hide_banner_on_plugin_page', 'captcha/captcha.php', '3.8.4' ),
-				array( 'gllr_hide_banner_on_plugin_page', 'gallery-plugin/gallery-plugin.php', '3.9.1' )
-			);
-			if ( ! function_exists( 'get_plugins' ) )
-				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-			if ( ! $cntctfrmmlt_plugin_info )
-				$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
-
-			$all_plugins = get_plugins();
-			$this_banner = 'cntctfrmmlt_hide_banner_on_plugin_page';
-			foreach ( $banner_array as $key => $value ) {
-				if ( $this_banner == $value[0] ) {
-					if ( ! isset( $bstwbsftwppdtplgns_cookie_add ) ) {
-						echo '<script type="text/javascript" src="' . plugins_url( 'js/c_o_o_k_i_e.js', __FILE__ ) . '"></script>';
-						$bstwbsftwppdtplgns_cookie_add = true;
-					}
-					if ( is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) ) {
-						global $wp_version; ?>
-						<script type="text/javascript">
-							(function($) {
-								$(document).ready( function() {
-									var hide_message = $.cookie( "cntctfrmmlt_hide_banner_on_plugin_page" );
-									if ( hide_message == "true") {
-										$( ".cntctfrmmlt_message" ).css( "display", "none" );
-									} else {
-										$( ".cntctfrmmlt_message" ).css( "display", "block" );
-									}
-									$( ".cntctfrmmlt_close_icon" ).click( function() {
-										$( ".cntctfrmmlt_message" ).css( "display", "none" );
-										$.cookie( "cntctfrmmlt_hide_banner_on_plugin_page", "true", { expires: 32 } );
-									});	
-								});
-							})(jQuery);
-						</script>
-						<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
-							<div class="cntctfrmmlt_message bws_banner_on_plugin_page" style="display: none;">
-								<img class="cntctfrmmlt_close_icon close_icon" title="" src="<?php echo plugins_url( 'images/close_banner.png', __FILE__ ); ?>" alt=""/>
-								<div class="button_div">
-									<a class="button" target="_blank" href="http://bestwebsoft.com/products/contact-form-multi/?k=93536843024dbb3360bfa9d6d6a1d297&pn=123&v=<?php echo $cntctfrmmlt_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Learn More', 'cntctfrmmlt' ); ?></a>
-								</div>
-								<div class="text">
-									<?php _e( "It's time to upgrade your <strong>Contact Form Multi plugin</strong> to <strong>PRO</strong> version", 'cntctfrmmlt' ); ?>!<br />
-									<span><?php _e( 'Extend standard plugin functionality with new great options', 'cntctfrmmlt' ); ?></span>
-								</div> 
-								<div class="icon">
-									<img title="" src="<?php echo plugins_url( 'images/banner.png', __FILE__ ); ?>" alt=""/>
-								</div>
-							</div>
-						</div>
-						<?php break;
-					} else { ?>
-						<script type="text/javascript">
-							(function($) {
-								$(document).ready( function() {
-									$.cookie( "cntctfrmmlt_hide_banner_on_plugin_page", "temporarily", { expires: 32 } );
-								});
-							})(jQuery);
-						</script>
-					<?php }
-				}
-				if ( isset( $all_plugins[ $value[1] ] ) && $all_plugins[ $value[1] ]["Version"] >= $value[2] && is_plugin_active( $value[1] ) && ! isset( $_COOKIE[ $value[0] ] ) ) {
-					break;
-				}
-			}
+		if ( 'plugins.php' == $hook_suffix ) {
+			global $cntctfrmmlt_plugin_info, $wp_version;
+			bws_plugin_banner( $cntctfrmmlt_plugin_info, 'cntctfrmmlt', 'contact-form-multi', '93536843024dbb3360bfa9d6d6a1d297', '123', '//ps.w.org/contact-form-multi/assets/icon-128x128.png' ); 
 		}
 	}
 }
@@ -463,4 +317,3 @@ add_action( 'wp_ajax_cntctfrmmlt_action', 'cntctfrmmlt_action_callback' );
 add_action( 'admin_notices', 'cntctfrmmlt_plugin_banner' );
 /*uninstal hook*/
 register_uninstall_hook( __FILE__, 'cntctfrmmlt_delete' );
-?>
