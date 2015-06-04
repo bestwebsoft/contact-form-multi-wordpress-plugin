@@ -4,7 +4,7 @@ Plugin Name: Contact Form Multi by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.1.2
+Version: 1.1.3
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -119,7 +119,7 @@ if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 		if ( isset( $_GET['del'] ) ) {
 
 			/*Remove the contact form from the database*/
-			$cntctfrmmlt_args = 'cntctfrmmlt_options_'. $_GET['id'];
+			$cntctfrmmlt_args = 'cntctfrmmlt_options_' . $_GET['id'];
 			delete_option( $cntctfrmmlt_args );
 			/*Remove the contact form from the database*/
 
@@ -148,7 +148,7 @@ if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 /* Function creates other links on admin page. */
 if ( ! function_exists ( 'cntctfrmmlt_plugin_links' ) ) {
 	function cntctfrmmlt_plugin_links( $links, $file ) {
-		$base = plugin_basename(__FILE__);
+		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
 			$links[] = '<a href="http://wordpress.org/plugins/contact-form-multi/faq/" target="_blank">' . __( 'FAQ','contact-form-multi' ) . '</a>';
 			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support','contact-form-multi' ) . '</a>';
@@ -173,7 +173,7 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 		}
 		/*Update name and ID, options*/
 		if ( isset( $_POST['cntctfrmmlt_name_form'] ) ) {
-			foreach( $_POST['cntctfrmmlt_name_form'] as $cntctfrmmlt_j ){
+			foreach ( $_POST['cntctfrmmlt_name_form'] as $cntctfrmmlt_j ) {
 				list( $key, $cntctfrmmlt_value ) = explode( ':', $cntctfrmmlt_j );
 				$cntctfrmmlt_counts[$key] = strip_tags( stripslashes( $cntctfrmmlt_value ) );
 				$cntctfrmmlt_options_main['name_id_form'] = $cntctfrmmlt_counts;
@@ -187,7 +187,7 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 /*Function to add stylesheets and scripts for admin bar*/
 if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 	function cntctfrmmlt_scripts() {
-		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' ||  $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
+		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
 			global $wp_version;
 			if ( 3.8 > $wp_version )
 				wp_enqueue_style( 'cntctfrmml_stylesheet', plugins_url( 'css/style_wp_before_3.8.css', __FILE__ ) );
@@ -209,7 +209,7 @@ if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 
 			$script_vars = array(
 				'cntctfrmmlt_nonce' 			=> wp_create_nonce( plugin_basename( __FILE__ ), 'cntctfrmmlt_ajax_nonce_field' ),
-				'cntctfrmmlt_delete_message' 	=>  __( 'Are you sure you want to delete the form?', 'contact-form-multi' ),
+				'cntctfrmmlt_delete_message' 	=> __( 'Are you sure you want to delete the form?', 'contact-form-multi' ),
 				'cntctfrmmlt_id_form' 			=> $cntctfrmmlt_options_main['id_form'],
 				'cntctfrmmlt_location'			=> $site_url_if_multisite . $_SERVER['PHP_SELF'] . ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) ? '?page=contact_form.php' : '?page=contact_form_pro.php' ),
 				'cntctfrmmlt_action_slug'		=> ( isset( $_GET['action'] ) ? '&action=' . $_GET['action'] : '' ),

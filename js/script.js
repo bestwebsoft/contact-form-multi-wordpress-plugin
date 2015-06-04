@@ -12,7 +12,7 @@
 		$( '.cntctfrmmlt-tab-wrapper' ).prepend( '<input class="cntctfrmmlt-enter" type="button" value="&#043" />' );
 		$( '.cntctfrmmlt-tab-wrapper' ).after( '<div class="clear"></div>' );
 		for ( var i in cntctfrmmlt_script_vars.cntctfrmmlt_count ) {
-			$( '.cntctfrmmlt-enter' ).before( '<li id="' + i + '" class="cntctfrmmlt-nav-tab nav-tab"><input id="' + i + '" class="cntctfrmmlt-text" style="display:none" size="10" type="text" value="' + cntctfrmmlt_script_vars.cntctfrmmlt_count[i] + '" /><div class="cntctfrmmlt-noactive"></div><input type="button" name="cntctfrmmlt_del" class="cntctfrmmlt-delete" value=" " /></li>' );
+			$( '.cntctfrmmlt-enter' ).before( '<li id="' + i + '" class="cntctfrmmlt-nav-tab nav-tab"><input id="' + i + '" class="cntctfrmmlt-text" style="display:none" size="10" maxlength="100" type="text" value="' + cntctfrmmlt_script_vars.cntctfrmmlt_count[i] + '" /><div class="cntctfrmmlt-noactive"></div><input type="button" name="cntctfrmmlt_del" class="cntctfrmmlt-delete" value=" " /></li>' );
 			cntctfrmmlt_room.push( i );			
 		}
 
@@ -37,7 +37,7 @@
         $( '.cntctfrmmlt-enter' ).click( function() {
 			for ( var i = 0; i < cntctfrmmlt_room.length; i++ ) {
 				if ( i in cntctfrmmlt_room ) {
-					cntctfrmmlt_name.push( cntctfrmmlt_room[i] + ":" + $( 'input[id=' + cntctfrmmlt_room[i] + ']' ).val() );
+					cntctfrmmlt_name.push( cntctfrmmlt_room[ i ] + ":" + $( 'input[id=' + cntctfrmmlt_room[ i ] + ']' ).val() );
 				}
 			}
 			cntctfrmmlt_name.push( cntctfrmmlt_script_vars.cntctfrmmlt_key_id + ':NEW_FORM' );
