@@ -4,7 +4,7 @@ Plugin Name: Contact Form Multi by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.1.3
+Version: 1.1.4
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
