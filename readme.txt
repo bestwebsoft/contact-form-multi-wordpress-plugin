@@ -1,10 +1,10 @@
 === Contact Form Multi by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: Attachment, contact, contcat, conact, cnotact, contact button, contact form, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, multiple contact forms, request, send, send copy, several contact forms, shortcode, text
-Requires at least: 3.1
-Tested up to: 4.2.2
-Stable tag: 1.1.4
+Tags: Attachment, add contact form, add contact form add-on, add several contact forms, address form, best contact form, best cf, best contact form add-on, cnotact, conact, contact, contact button, contact form, contact form addon, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, contcat, copy, request, send, send copy, several contact forms, contact us form, contactform, custom form, easy contact form, email, email form, file upload, form addons, form register, form registration, free feedback form, free form, free contact form, feedback, feedback form, form, free, forms plugin, forms, insert the shortcode, kontak form, online form, multi, multiple contact forms, multilingual, post feedback, request, send, simple contact form, send copy, send messages, shortcode, web-page feedback, web form, wordpress contact form, wp form, wordpress plugin, wp plugins
+Requires at least: 3.8
+Tested up to: 4.3.1
+Stable tag: 1.1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,20 +12,21 @@ Add multiple contact forms to your WordPress website using the Contact Form plug
 
 == Description ==
 
-This plugin makes it possible to create and implement multiple contact forms on your site. It is also possible to set different parameters for different contact forms. Please note that this plugin is an exclusive add-on to the Contact Form plugin and it will not work without it. Please make sure you've enabled Javascript, otherwise the plugin will not work.
+This plugin makes it possible to create and implement multiple contact forms on your site. It is also possible to set different parameters for different contact forms. Please note that this plugin is an 
+exclusive add-on to the Contact Form plugin and it will not work without it. Please make sure you've enabled Javascript, otherwise the plugin will not work.
 
 http://www.youtube.com/watch?v=BlmKUo9QQ5Y
 
-<a href="http://www.youtube.com/watch?v=msD6J_oSLNQ" target="_blank">Video instruction on Installation</a>
+<a href="http://www.youtube.com/watch?v=msD6J_oSLNQ" target="_blank">Contact Form Multi by BestWebSoft Video instruction on Installation</a>
 
-<a href="http://wordpress.org/plugins/contact-form-multi/faq/" target="_blank">FAQ</a>
+<a href="http://wordpress.org/plugins/contact-form-multi/faq/" target="_blank">Contact Form Multi by BestWebSoft FAQ</a>
 
-<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Contact Form Multi by BestWebSoft Support</a>
 
-<a href="http://bestwebsoft.com/products/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9" target="_blank">Contact Form Pro</a> 
-<a href="http://wordpress.org/plugins/contact-form-plugin" target="_blank">Contact Form Plugin</a>
+<a href="http://bestwebsoft.com/products/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9" target="_blank">Contact Form Pro by BestWebSoft</a> 
+<a href="http://wordpress.org/plugins/contact-form-plugin" target="_blank">Contact Form by BestWebSoft</a>
 
-<a href="http://bestwebsoft.com/products/contact-form-multi/?k=ca084ecca327503cef9ee2ae5a1f672e" target="_blank" title="Contact Form Multi Pro">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/products/contact-form-multi/?k=ca084ecca327503cef9ee2ae5a1f672e" target="_blank" title="Contact Form Multi Pro by BestWebSoft">Upgrade to Contact Form Multi Pro by BestWebSoft</a>
 
 = Features =
 
@@ -95,6 +96,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.1.5 - 10.11.2015 =
+* Update : BWS plugins section is updated.
+* Update : All functionality for wordpress 4.3.1 was updated.
+
 = V1.1.4 - 07.07.2015 =
 * Update : BWS plugins section is updated.
 
@@ -146,6 +151,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.1.5 =
+BWS plugins section is updated. All functionality for wordpress 4.3.1 was updated.
 
 = V1.1.4 =
 BWS plugins section is updated.

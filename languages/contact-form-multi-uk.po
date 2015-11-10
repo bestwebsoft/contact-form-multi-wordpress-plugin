@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form Multi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-19 13:11+0300\n"
-"PO-Revision-Date: 2015-02-19 13:12+0300\n"
+"POT-Creation-Date: 2015-11-09 19:01+0300\n"
+"PO-Revision-Date: 2015-11-09 19:07+0300\n"
 "Last-Translator: \n"
-"Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
+"Language-Team: BestWebSoft <plugin@bestwebsoft.com>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,105 +16,96 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: contact-form-multi.php:204
-msgid "requires"
-msgstr "вимагає"
-
-#: contact-form-multi.php:204
-msgid ""
-"or higher, that is why it has been deactivated! Please upgrade WordPress and "
-"try again."
-msgstr ""
-"або вище, ось чому його було деактивовано! Будь ласка, оновіть WordPress та "
-"спробуйте ще раз."
-
-#: contact-form-multi.php:204
-msgid "Back to the WordPress"
-msgstr "Назад до WordPress на"
-
-#: contact-form-multi.php:204
-msgid "Plugins page"
-msgstr "Сторінку плагінів"
-
-#: contact-form-multi.php:215
+#: contact-form-multi.php:162
 msgid "FAQ"
-msgstr "Розповсюджені питання"
+msgstr "FAQ"
 
-#: contact-form-multi.php:216
+#: contact-form-multi.php:163
 msgid "Support"
 msgstr "Підтримка"
 
-#: contact-form-multi.php:271
+#: contact-form-multi.php:217
 msgid "Are you sure you want to delete the form?"
 msgstr "Ви впевнені, що хочете видалити форму?"
 
-# @ contact-form-multi
-#: contact-form-multi.php:305
-msgid ""
-"Contact Form Plugin has not been found.</br>You should install and activate "
-"this plugin for the correct work with Contact Form Multi plugin.</br>You can "
-"download Contact Form Plugin from"
-msgstr ""
-"Плагін Contact Form не знайдено. </br> Для коректної роботи плагіну Contact "
-"Form Multi, будь ласка, встановіть та активуйте плагін Contact Form. </br> "
-"Ви можете завантажити його з"
+#: contact-form-multi.php:239
+msgid "Contact Form Plugin has not been found."
+msgstr "Плагін Contact Form не знайдено."
 
-#: contact-form-multi.php:305
+# @ contact-form-multi
+#: contact-form-multi.php:239
+msgid ""
+"You should install and activate this plugin for the correct work with "
+"Contact Form Multi plugin."
+msgstr ""
+"Вам слід встановити та активувати цей плагін для коректної роботи з плагіном "
+"Contact Form Multi."
+
+#: contact-form-multi.php:239
+msgid "You can download Contact Form Plugin from"
+msgstr "Ви можете завантажити плагін Contact Form з"
+
+#: contact-form-multi.php:239
 msgid "Developers website"
 msgstr "сайту розробників"
 
-#: contact-form-multi.php:305
+#: contact-form-multi.php:239
 msgid "website of plugin Authors"
 msgstr "сайту авторів плагіну"
 
-#: contact-form-multi.php:305
+#: contact-form-multi.php:239
 msgid "or"
 msgstr "чи"
 
-#: contact-form-multi.php:305
+#: contact-form-multi.php:239
 msgid "Wordpress."
 msgstr "Wordpress."
 
+#: contact-form-multi.php:242
+msgid "Contact Form Plugin is not active."
+msgstr "Плагін Contact Form не активовано."
+
 # @ contact-form-multi
-#: contact-form-multi.php:308
+#: contact-form-multi.php:242
 msgid ""
-"Contact Form Plugin is not active.</br>You should activate this plugin for "
-"the correct work with Contact Form Multi plugin."
+"You should activate this plugin for the correct work with Contact Form Multi "
+"plugin."
 msgstr ""
-"Плагін Contact Form не активовано.</br> Для коректної роботи плагіну Contact "
-"Form Multi, будь ласка, активуйте плагін Contact Form."
+"Вам слід активувати цей плагін для коректної роботи з плагіном Contact Form "
+"Multi."
 
-#: contact-form-multi.php:313
+#: contact-form-multi.php:247
+msgid "Contact Form Plugin has old version."
+msgstr "Ви використовуєте плагін Contact Form старої версії."
+
+#: contact-form-multi.php:247
 msgid ""
-"Contact Form Plugin has old version.</br>You need to update this plugin for "
-"correct work with Contact Form Multi plugin."
+"You need to update this plugin for correct work with Contact Form Multi "
+"plugin."
 msgstr ""
-"Ви користуєтесь застарілою версією плагіну Contact Form.</br>Вам потрібно "
-"оновити його для коректної роботи плагіну Contact Form Multi."
+"Вам слід оновити цей плагін для коректної роботи з плагіном Contact Form "
+"Multi."
 
-#: contact-form-multi.php:326
+#: contact-form-multi.php:260
 msgid "WARNING:"
 msgstr "УВАГА:"
 
-#: contact-form-multi.php:331
+#: contact-form-multi.php:265
 msgid "Please enable JavaScript in your browser!"
 msgstr "Будь ласка, увімкніть JavaScript у вашому браузері!"
 
-# @ cntctfrmmlt
-#: contact-form-multi.php:402
-msgid "Learn More"
-msgstr "Докладніше"
+#~ msgid "requires"
+#~ msgstr "вимагає"
 
-# @ cntctfrmmlt
-#: contact-form-multi.php:405
-msgid ""
-"It's time to upgrade your <strong>Contact Form Multi plugin</strong> to "
-"<strong>PRO</strong> version"
-msgstr ""
-"Чаc оновити ваш <strong>Contact Form Multi plugin</strong> до <strong>PRO</"
-"strong> версії"
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "або вище, ось чому його було деактивовано! Будь ласка, оновіть WordPress "
+#~ "та спробуйте ще раз."
 
-# @ cntctfrmmlt
-#: contact-form-multi.php:406
-msgid "Extend standard plugin functionality with new great options"
-msgstr "Розширити стандартний функціонал плагіну новими опціями"
+#~ msgid "Back to the WordPress"
+#~ msgstr "Назад до WordPress на"
+
+#~ msgid "Plugins page"
+#~ msgstr "Сторінку плагінів"

@@ -4,7 +4,9 @@ Plugin Name: Contact Form Multi by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
 Author: BestWebSoft
-Version: 1.1.4
+Text Domain: contact-form-multi
+Domain Path: /languages
+Version: 1.1.5
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -38,10 +40,9 @@ if ( ! function_exists( 'cntctfrmmlt_admin_menu' ) ) {
 if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 	function cntctfrmmlt_init() {
 		global $cntctfrmmlt_plugin_info;
-		/* add language files. */
-		load_plugin_textdomain( 'contact-form-multi', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 
-		require_once( dirname( __FILE__ ) . '/bws_menu/bws_functions.php' );
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
+		bws_include_init( plugin_basename( __FILE__ ) );
 		
 		if ( empty( $cntctfrmmlt_plugin_info ) ) {
 			if ( ! function_exists( 'get_plugin_data' ) )
@@ -49,7 +50,7 @@ if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 			$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
 		}
 		/* Function check if plugin is compatible with current WP version  */
-		bws_wp_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, "3.1" );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '3.8', '3.1' );
 	}
 }
 
@@ -74,6 +75,13 @@ if ( ! function_exists( 'cntctfrmmlt_admin_init' ) ) {
 	}
 }
 
+if ( ! function_exists( 'cntctfrmmlt_plugins_loaded' ) ) {
+	function cntctfrmmlt_plugins_loaded() {
+		/* add language files. */
+		load_plugin_textdomain( 'contact-form-multi', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+	}
+}
+
 if ( ! function_exists( 'cntctfrmmlt_settings_defaults' ) ) {
 	function cntctfrmmlt_settings_defaults() {
 		global $cntctfrmmlt_options, $cntctfrmmlt_plugin_info, $cntctfrmmlt_options_main;
@@ -83,7 +91,8 @@ if ( ! function_exists( 'cntctfrmmlt_settings_defaults' ) ) {
 			'plugin_option_version' => $cntctfrmmlt_plugin_info["Version"],
 			'name_id_form'	=> array( 1 => 'NEW_FORM' ),
 			'next_id_form'	=> 2,
-			'id_form'		=> 1
+			'id_form'		=> 1,
+			'first_install'	=>	strtotime( "now" )
 		);
 		/*add options to database*/
 		if ( ! get_option( 'cntctfrmmlt_options_main' ) )
@@ -188,12 +197,8 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 	function cntctfrmmlt_scripts() {
 		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
-			global $wp_version;
-			if ( 3.8 > $wp_version )
-				wp_enqueue_style( 'cntctfrmml_stylesheet', plugins_url( 'css/style_wp_before_3.8.css', __FILE__ ) );
-			else
-				wp_enqueue_style( 'cntctfrmml_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
-			
+
+			wp_enqueue_style( 'cntctfrmml_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 			wp_enqueue_script( 'cntctfrmmlt_script', plugins_url( 'js/script.js', __FILE__ ) );
 
 			/* script vars */
@@ -231,15 +236,15 @@ if ( ! function_exists( 'cntctfrmmlt_check' ) ) {
 		$all_plugins = get_plugins();
 
 		if ( ! ( array_key_exists( 'contact-form-plugin/contact_form.php', $all_plugins ) || array_key_exists( 'contact-form-pro/contact_form_pro.php', $all_plugins ) ) ) {
-			$cntctfrmmlt_contact_form_not_found = __( 'Contact Form Plugin has not been found.</br>You should install and activate this plugin for the correct work with Contact Form Multi plugin.</br>You can download Contact Form Plugin from', 'contact-form-multi' ) . ' <a href="' . esc_url( 'http://bestwebsoft.com/products/contact-form/' ) . '" title="' . __( 'Developers website', 'contact-form-multi' ). '"target="_blank">' . __( 'website of plugin Authors', 'contact-form-multi' ) . '</a> ' . __( 'or', 'contact-form-multi' ) . ' <a href="' . esc_url( 'http://wordpress.org' ) .'" title="Wordpress" target="_blank">'. __( 'Wordpress.', 'contact-form-multi' ) . '</a>';
+			$cntctfrmmlt_contact_form_not_found = __( 'Contact Form Plugin has not been found.', 'contact-form-multi' ) . '</br>' . __( 'You should install and activate this plugin for the correct work with Contact Form Multi plugin.', 'contact-form-multi' ) . '</br>' . __( 'You can download Contact Form Plugin from', 'contact-form-multi' ) . ' <a href="' . esc_url( 'http://bestwebsoft.com/products/contact-form/' ) . '" title="' . __( 'Developers website', 'contact-form-multi' ). '"target="_blank">' . __( 'website of plugin Authors', 'contact-form-multi' ) . '</a> ' . __( 'or', 'contact-form-multi' ) . ' <a href="' . esc_url( 'http://wordpress.org' ) .'" title="Wordpress" target="_blank">'. __( 'Wordpress.', 'contact-form-multi' ) . '</a>';
 		} else {
 			if ( ! ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) ) ) {
-				$cntctfrmmlt_contact_form_not_active = __( 'Contact Form Plugin is not active.</br>You should activate this plugin for the correct work with Contact Form Multi plugin.', 'contact-form-multi' );
+				$cntctfrmmlt_contact_form_not_active = __( 'Contact Form Plugin is not active.', 'contact-form-multi' ) . '</br>' . __( 'You should activate this plugin for the correct work with Contact Form Multi plugin.', 'contact-form-multi' );
 			}
 			/* old version */
 			if ( ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) && isset( $all_plugins['contact-form-plugin/contact_form.php']['Version'] ) && $all_plugins['contact-form-plugin/contact_form.php']['Version'] < '3.74' ) || 
 				( is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) && isset( $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] ) && $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] < '1.23' ) ) {
-				$cntctfrmmlt_contact_form_not_found = __( 'Contact Form Plugin has old version.</br>You need to update this plugin for correct work with Contact Form Multi plugin.', 'contact-form-multi' );
+				$cntctfrmmlt_contact_form_not_found = __( 'Contact Form Plugin has old version.', 'contact-form-multi' ) . '</br>' . __( 'You need to update this plugin for correct work with Contact Form Multi plugin.', 'contact-form-multi' );
 			}
 		}
 	}
@@ -269,7 +274,10 @@ if ( ! function_exists ( 'cntctfrmmlt_plugin_banner' ) ) {
 		global $hook_suffix;
 		if ( 'plugins.php' == $hook_suffix ) {
 			global $cntctfrmmlt_plugin_info, $wp_version;
-			bws_plugin_banner( $cntctfrmmlt_plugin_info, 'cntctfrmmlt', 'contact-form-multi', '93536843024dbb3360bfa9d6d6a1d297', '123', '//ps.w.org/contact-form-multi/assets/icon-128x128.png' ); 
+			$cntctfrmmlt_options = get_option( 'cntctfrmmlt_options_main' );
+			if ( isset( $cntctfrmmlt_options['first_install'] ) && strtotime( '-1 week' ) > $cntctfrmmlt_options['first_install'] ) {
+				bws_plugin_banner( $cntctfrmmlt_plugin_info, 'cntctfrmmlt', 'contact-form-multi', '93536843024dbb3360bfa9d6d6a1d297', '123', '//ps.w.org/contact-form-multi/assets/icon-128x128.png' );
+			}
 		}
 	}
 }
@@ -306,6 +314,7 @@ add_action( 'admin_menu', 'cntctfrmmlt_admin_menu' );
 /* Hook calls functions for init and admin_init hooks */
 add_action( 'init', 'cntctfrmmlt_init' );
 add_action( 'admin_init', 'cntctfrmmlt_admin_init' );
+add_action( 'plugins_loaded', 'cntctfrmmlt_plugins_loaded' );
 /* hook for adding scripts and styles */
 add_action( 'admin_enqueue_scripts', 'cntctfrmmlt_scripts' );
 /* Additional links on the plugin page*/
