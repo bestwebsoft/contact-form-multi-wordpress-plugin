@@ -4,29 +4,22 @@
 	clear: both;
 	margin-top: 16px;
 }
+.cntctfrmmlt-tab-wrapper h3 {
+	margin-bottom: 0;
+}
+.cntctfrmmlt-tab-wrapper .nav-tab {
+	padding: 5px 14px;
+}
 .cntctfrmmlt-nav {
-	padding: 20px;
-	border-radius: 0 5px 5px 5px;
+	padding: 0 20px;
 	clear: both;
-	border: 1px solid #CCCCCC;
+	border-color: transparent #ccc #ccc;
+	border-width: 1px;
+	border-style: solid;
 	z-index: -100;
 }
-.cntctfrmmlt-nav-tab {
-	font-size: 15px;
-	font-weight: 700;
-	padding: 0 0 1px;
-}
 .cntctfrmmlt-nav-tab:hover {
-	background: none repeat scroll 0 0 #ffffff;
-}
-.cntctfrmmlt-tab-wrapper li:last-child{
-	float: left;
-	display: inline-block;
-}
-.cntctfrmmlt-activee {
-	font-size: 15px;
-	font-weight: 700;
-	padding: 0 0 6px;	
+	background: none repeat scroll 0 0 #fff;
 }
 /*when the form is active*/
 
@@ -35,21 +28,11 @@ input.cntctfrmmlt-delete {
 	background: url('../images/del.png') no-repeat scroll center center transparent;
 	cursor: pointer;
 	border: none;
-	margin: 6px;
-	margin-left: 0px;
-	padding: 0px;
-	padding-left: 5px;
-	padding-right: 5px;
+	margin: 0 6px;
+	padding: 3px 5px;
 }
-/*delete button styles*/
 
 /*button styles add a form*/
-input.cntctfrmmlt-enter {
-	cursor: pointer;
-	margin: 0px none!important;
-	padding: 0px none!important;
-	border-radius: 5px;
-}
 input.cntctfrmmlt-enter {
 	background: #2EA2CC;
 	display: inline-block;
@@ -58,49 +41,44 @@ input.cntctfrmmlt-enter {
 	font-weight: bolder;
 	line-height: 26px;
 	height: 28px;
-	margin: 0px;
 	padding: 0px 10px 1px;
+	margin: 0 0 0 5px;
 	cursor: pointer;
 	border-width: 1px;
 	border-style: solid;
-	border-radius: 3px 3px 3px 3px;
+	border-radius: 3px;
 	white-space: nowrap;
 	-moz-box-sizing: border-box;
-	border-bottom-color: #0074A2;
-	border-left-color: #0074A2;
-	border-right-color: #0074A2;
-	border-top-color: #0074A2;
+	border-color: #0074A2;
 	box-shadow: inset 0px 1px 0px rgba(120, 200, 230, 0.600), 1px 1px 2px rgba(0, 0, 0, 0.400);
-	color: #ffffff;
+	color: #fff;
 	text-transform: uppercase;
 }
 input.cntctfrmmlt-text {
 	float: left;
 	cursor: pointer;
-	margin: 0px;
-	margin-right: 10px; 
-	padding: 0px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 8px;
-	padding-bottom: 0.5em;
+	padding: 3px 5px;
+	margin: 0;
 	border: none;
 	background: none;
 	box-shadow: none;
-	
+	font-size: 13px;
 }
 div.cntctfrmmlt-noactive {
 	cursor: pointer;
 	display: inline;
-	float: left;
-	padding: 0px;
 	margin: 0px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 8px;
-	padding-bottom: 0.7em;
 }
 .cntctfrm_settings_table { 
 	empty-cells: show; 
 	font-size: 13px;
+}
+@media screen and (max-width: 600px) {
+	input.cntctfrmmlt-enter {
+		margin-top: 10px;
+	}
+	.cntctfrmmlt-nav {
+		border-top-color: #ccc;
+		margin-top: 5px;
+	}
 }

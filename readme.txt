@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: Attachment, add contact form, add contact form add-on, add several contact forms, address form, best contact form, best cf, best contact form add-on, cnotact, conact, contact, contact button, contact form, contact form addon, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, contcat, copy, request, send, send copy, several contact forms, contact us form, contactform, custom form, easy contact form, email, email form, file upload, form addons, form register, form registration, free feedback form, free form, free contact form, feedback, feedback form, form, free, forms plugin, forms, insert the shortcode, kontak form, online form, multi, multiple contact forms, multilingual, post feedback, request, send, simple contact form, send copy, send messages, shortcode, web-page feedback, web form, wordpress contact form, wp form, wordpress plugin, wp plugins
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.1.5
+Tested up to: 4.4-RC1
+Stable tag: 1.1.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,8 +30,8 @@ http://www.youtube.com/watch?v=BlmKUo9QQ5Y
 
 = Features =
 
-* Actions: Ability to add an unlimited number of contact forms.
-* Actions: Ability to select different settings for each contact form.
+* Add an unlimited number of contact forms.
+* Select different settings for each contact form.
 
 = Translation =
 
@@ -96,6 +96,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.1.6 - 04.12.2015 =
+* Bugfix : The bug with plugin menu duplicating was fixed.
+
 = V1.1.5 - 10.11.2015 =
 * Update : BWS plugins section is updated.
 * Update : All functionality for wordpress 4.3.1 was updated.
@@ -151,6 +154,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.1.6 =
+The bug with plugin menu duplicating was fixed.
 
 = V1.1.5 =
 BWS plugins section is updated. All functionality for wordpress 4.3.1 was updated.
