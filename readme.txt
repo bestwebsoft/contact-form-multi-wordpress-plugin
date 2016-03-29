@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: Attachment, add contact form, add contact form add-on, add several contact forms, address form, best contact form, best cf, best contact form add-on, cnotact, conact, contact, contact button, contact form, contact form addon, contact form add-on, contact form parameters, contact form plugin, contact me, contacts, contacts form plugin, contcat, copy, request, send, send copy, several contact forms, contact us form, contactform, custom form, easy contact form, email, email form, file upload, form addons, form register, form registration, free feedback form, free form, free contact form, feedback, feedback form, form, free, forms plugin, forms, insert the shortcode, kontak form, online form, multi, multiple contact forms, multilingual, post feedback, request, send, simple contact form, send copy, send messages, shortcode, web-page feedback, web form, wordpress contact form, wp form, wordpress plugin, wp plugins
 Requires at least: 3.8
-Tested up to: 4.4-RC1
-Stable tag: 1.1.6
+Tested up to: 4.4.2
+Stable tag: 1.1.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -32,6 +32,8 @@ http://www.youtube.com/watch?v=BlmKUo9QQ5Y
 
 * Add an unlimited number of contact forms.
 * Select different settings for each contact form.
+
+If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
 
 = Translation =
 
@@ -93,8 +95,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 1. The Contact Form plugin settings page with a newly created contact form.
 2. The Contact Form plugin additional settings tab with a newly created contact form.
+3. The Contact Form plugin appearance tab with a newly created contact form.
 
 == Changelog ==
+
+= V1.1.7 - 29.03.2016 =
+* Update : All functionality for wordpress 4.4.2 was updated.
 
 = V1.1.6 - 04.12.2015 =
 * Bugfix : The bug with plugin menu duplicating was fixed.
@@ -154,6 +160,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.1.7 =
+All functionality for wordpress 4.4.2 was updated.
 
 = V1.1.6 =
 The bug with plugin menu duplicating was fixed.

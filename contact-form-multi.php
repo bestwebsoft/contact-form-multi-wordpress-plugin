@@ -6,13 +6,13 @@ Description: This plugin is an exclusive add-on to the Contact Form plugin by Be
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.1.6
+Version: 1.1.7
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
 
 /*  
-	@ Copyright 2015  BestWebSoft  ( http://support.bestwebsoft.com )
+	@ Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as 
@@ -307,6 +307,10 @@ if ( ! function_exists ( 'cntctfrmmlt_delete' ) ) {
 			}
 			switch_to_blog( $cntctfrmmlt_original_blog_id );
 		}
+
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
+		bws_include_init( plugin_basename( __FILE__ ) );
+		bws_delete_plugin( plugin_basename( __FILE__ ) );
 	}
 }
 
