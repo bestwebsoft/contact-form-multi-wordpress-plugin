@@ -6,7 +6,7 @@ Description: This plugin is an exclusive add-on to the Contact Form plugin by Be
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.1.7
+Version: 1.1.8
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -51,7 +51,7 @@ if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 			$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
 		}
 		/* Function check if plugin is compatible with current WP version  */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '3.8', '3.1' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '3.8' );
 	}
 }
 
@@ -255,7 +255,7 @@ if ( ! function_exists( 'cntctfrmmlt_check' ) ) {
 if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 	function cntctfrmmlt_show_notices() { 
 		global $hook_suffix, $cntctfrmmlt_contact_form_not_found, $cntctfrmmlt_contact_form_not_active;
-		if ( $hook_suffix == 'plugins.php' || ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'bws_plugins' ) || ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' ) ) ) {
+		if ( $hook_suffix == 'plugins.php' || ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'bws_panel' ) || ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' ) ) ) {
 			if ( '' != $cntctfrmmlt_contact_form_not_found || '' != $cntctfrmmlt_contact_form_not_active ) { ?>
 				<div class="error">
 					<p><strong><?php _e( 'WARNING:', 'contact-form-multi' ); ?></strong> <?php echo $cntctfrmmlt_contact_form_not_found . $cntctfrmmlt_contact_form_not_active; ?></p>
