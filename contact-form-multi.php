@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Contact Form Multi by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/
-Description: This plugin is an exclusive add-on to the Contact Form plugin by BestWebSoft.
+Plugin URI: http://bestwebsoft.com/products/contact-form-multi/
+Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.1.8
+Version: 1.1.9
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */

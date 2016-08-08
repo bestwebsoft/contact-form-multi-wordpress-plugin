@@ -3,12 +3,12 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 1.1.8
+Tested up to: 4.6
+Stable tag: 1.1.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Add multiple contact forms to your WordPress website using the Contact Form plugin.
+Add unlimited number of contact forms to WordPress website.
 
 == Description ==
 
@@ -99,6 +99,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.1.9 - 08.08.2016 =
+* Update : All functionality for wordpress 4.6 was updated.
+
 = V1.1.8 - 28.06.2016 =
 * Update : BWS panel section is updated.
 
@@ -163,6 +166,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.1.9 =
+* The compatibility with new WordPress version updated.
 
 = V1.1.8 =
 BWS panel section is updated.
