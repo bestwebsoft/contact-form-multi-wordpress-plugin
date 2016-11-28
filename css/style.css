@@ -54,6 +54,9 @@ input.cntctfrmmlt-enter {
 	color: #fff;
 	text-transform: uppercase;
 }
+.rtl input.cntctfrmmlt-enter {
+	margin: 0 5px 0 0;
+}
 input.cntctfrmmlt-text {
 	float: left;
 	cursor: pointer;
@@ -69,8 +72,8 @@ div.cntctfrmmlt-noactive {
 	display: inline;
 	margin: 0px;
 }
-.cntctfrm_settings_table { 
-	empty-cells: show; 
+.cntctfrm_settings_table {
+	empty-cells: show;
 	font-size: 13px;
 }
 @media screen and (max-width: 600px) {
