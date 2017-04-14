@@ -1,10 +1,10 @@
 === Contact Form Multi by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: http://bestwebsoft.com/donate/
+Donate link: https://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.2.0
+Tested up to: 4.7.3
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,9 +16,9 @@ Contact Form Multi is an add-on for Contact Form plugin. Create and customize an
 
 Extend your website capabilities with a multiple contact forms today!
 
-> **NOTE:** Contact Form Multi plugin is an exclusive add-on to the [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) plugin and it will not work without it.
+> **NOTE:** Contact Form Multi plugin is an exclusive add-on to the [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) plugin and it will not work without it.
 
-http://www.youtube.com/watch?v=BlmKUo9QQ5Y
+https://www.youtube.com/watch?v=BlmKUo9QQ5Y
 
 = Free Features =
 
@@ -34,39 +34,33 @@ http://www.youtube.com/watch?v=BlmKUo9QQ5Y
 > All features from Free version included plus:
 >
 > * Select extra settings available with Contact Form Pro for each contact form
-> * Get answer to your question within one business day ([Support Policy](http://bestwebsoft.com/support-policy/))
+> * Get answer to your question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
-> [Upgrade to Pro Now](http://bestwebsoft.com/products/wordpress/plugins/contact-form-multi/?k=ca084ecca327503cef9ee2ae5a1f672e)
+> [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/contact-form-multi/?k=ca084ecca327503cef9ee2ae5a1f672e)
 
-If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](http://support.bestwebsoft.com/hc/en-us/requests/new)
+If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
 
 = Documentation & Videos =
 
-* [[Doc] Installation](https://docs.google.com/document/d/189LPZKN3tzn_eykAhI-3hAmaISHy272AcJfywDfwr4U/)
-* [[Doc] Purchase, Installation & Configuration](https://docs.google.com/document/d/1IqXIdfSsGPiRm6vM0G0BTwcOdJo1vTS1fatSVnyYOZA/)
+* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=msD6J_oSLNQ)
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <http://support.bestwebsoft.com/>
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
 
 = Translation =
 
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](http://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](https://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](https://www.poedit.net/download.php).
 
 = Recommended Plugins =
 
-* [Updater](http://bestwebsoft.com/products/wordpress/plugins/updater/?k=1ded37c8694c43b6052cf50672552776) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
-* [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) - Allow customers to reach you using secure contact form plugin any website must have.
-
-= Donate =
-
-Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.
-
-[Donate Now](http://bestwebsoft.com/donate/)
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=1ded37c8694c43b6052cf50672552776) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
+* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) - Allow customers to reach you using secure contact form plugin any website must have.
 
 == Installation ==
 
@@ -74,9 +68,9 @@ Donations play an important role in supporting open-source projects. We greatly 
 2. Activate the plugin via the 'Plugins' menu in WordPress.
 3. Create a page or a post and insert the shortcode [contact_form id=you_form_id] into the text.
 
-[View a PDF version of Step-by-step Instruction on Contact Form Multi Installation](https://docs.google.com/document/d/189LPZKN3tzn_eykAhI-3hAmaISHy272AcJfywDfwr4U/)
+[View a PDF version of Step-by-step Instruction on Contact Form Multi Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 
-http://www.youtube.com/watch?v=msD6J_oSLNQ
+https://www.youtube.com/watch?v=msD6J_oSLNQ
 
 == Frequently Asked Questions ==
 
@@ -94,7 +88,7 @@ http://www.youtube.com/watch?v=msD6J_oSLNQ
 = How can I delete a form? =
 
 1. Click the Trash icon in the tab of the contact form that you want to delete.
-2. After clicking the Trash icon you will see a pop-up window with a question if you still want to delete the contact form. If you have'nt changed your mind to delete the form, please click OK, otherwise click Cancel.
+2. After clicking the Trash icon you will see a pop-up window with a question if you still want to delete the contact form. If you haven't changed your mind to delete the form, please click OK, otherwise click Cancel.
 
 = How can I add a contact form to my site? =
 
@@ -102,7 +96,7 @@ Please insert the shortcode [contact_form id=*] to a post or page.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<http://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
+Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
 
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
@@ -116,6 +110,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 3. The Contact Form plugin appearance tab with a newly created contact form.
 
 == Changelog ==
+
+= V1.2.1 - 14.04.2017 =
+* Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
 
 = V1.2.0 - 28.11.2016 =
 * Update : All functionality for wordpress 4.6.1 has been updated.
@@ -188,6 +185,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.2.1 =
+* Bugs fixed.
 
 = V1.2.0 =
 * The compatibility with new WordPress version updated.
