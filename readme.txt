@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
-Requires at least: 3.8
-Tested up to: 4.7.3
-Stable tag: 1.2.1
+Requires at least: 3.9
+Tested up to: 4.8
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Add unlimited number of contact forms to WordPress website.
 
 == Description ==
 
-Contact Form Multi is an add-on for Contact Form plugin. Create and customize an unlimited number of contact forms for your WordPress website and set different parameters for each of them.
+Contact Form Multi is an add-on to the Contact Form plugin. Create and customize an unlimited number of contact forms for your WordPress website and set different parameters for each of them.
 
 Extend your website capabilities with a multiple contact forms today!
 
@@ -59,8 +59,8 @@ Some of these translations are not complete. We are constantly adding new featur
 
 = Recommended Plugins =
 
-* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=1ded37c8694c43b6052cf50672552776) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
-* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) - Allow customers to reach you using secure contact form plugin any website must have.
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=1ded37c8694c43b6052cf50672552776) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
+* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) - Simple contact form plugin any WordPress website must have.
 
 == Installation ==
 
@@ -111,6 +111,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.2.2 - 13.07.2017 =
+* Update : We updated all functionality for WordPress 4.8.
+
 = V1.2.1 - 14.04.2017 =
 * Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
 
@@ -146,7 +149,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for Wordpress 4.2.1.
 
 = V1.1.1 - 02.03.2015 =
-* Update : We updated all functionality for new design of Conact Form plugin settings page.
+* Update : We updated all functionality for new design of Contact Form plugin settings page.
 * Update : We updated all functionality for Wordpress 4.1.1.
 
 = V1.1.0 - 05.01.2015 =
@@ -186,6 +189,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Upgrade Notice ==
 
+= V1.2.2 =
+* The compatibility with new WordPress version updated.
+
 = V1.2.1 =
 * Bugs fixed.
 
@@ -217,7 +223,7 @@ Maxlength is added for input. BWS plugins section is updated. We updated all fun
 We updated all functionality for Wordpress 4.2.1.
 
 = V1.1.1 =
-We updated all functionality for new design of Conact Form plugin settings page. We updated all functionality for Wordpress 4.1.1.
+We updated all functionality for new design of Contact Form plugin settings page. We updated all functionality for Wordpress 4.1.1.
 
 = V1.1.0 =
 BWS plugins section is updated. We updated all functionality for Wordpress 4.1.

@@ -6,7 +6,7 @@ Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.2.1
+Version: 1.2.2
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -51,7 +51,7 @@ if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 			$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
 		}
 		/* Function check if plugin is compatible with current WP version  */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '3.8' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '3.9' );
 	}
 }
 
@@ -61,7 +61,7 @@ if ( ! function_exists( 'cntctfrmmlt_admin_init' ) ) {
 		global $bws_plugin_info, $cntctfrmmlt_plugin_info;
 
 		/* Add variable for bws_menu */
-		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
+		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '123', 'version' => $cntctfrmmlt_plugin_info["Version"] );
 
 		/* check for installed and activated Contact Form*/
@@ -280,7 +280,7 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 			<?php } ?>
 			<noscript>
 				<div class="error">
-					<p><?php _e( 'Please enable JavaScript in your browser!', 'contact-form-multi'); ?></p>
+					<p><?php _e( 'Please enable JavaScript in your browser!', 'contact-form-multi' ); ?></p>
 				</div>
 			</noscript>
 		<?php }
@@ -291,7 +291,7 @@ if ( ! function_exists ( 'cntctfrmmlt_plugin_banner' ) ) {
 	function cntctfrmmlt_plugin_banner() {
 		global $hook_suffix;
 		if ( 'plugins.php' == $hook_suffix ) {
-			global $cntctfrmmlt_plugin_info, $wp_version;
+			global $cntctfrmmlt_plugin_info;
 			$cntctfrmmlt_options = get_option( 'cntctfrmmlt_options_main' );
 			if ( isset( $cntctfrmmlt_options['first_install'] ) && strtotime( '-1 week' ) > $cntctfrmmlt_options['first_install'] ) {
 				bws_plugin_banner( $cntctfrmmlt_plugin_info, 'cntctfrmmlt', 'contact-form-multi', '93536843024dbb3360bfa9d6d6a1d297', '123', '//ps.w.org/contact-form-multi/assets/icon-128x128.png' );
@@ -332,25 +332,6 @@ if ( ! function_exists ( 'cntctfrmmlt_delete' ) ) {
 			}
 		}
 
-		/**
-		 * @deprecated since 1.2.0
-		 * @todo remove after 01.06.2017
-		 * clearing 'uninstall_plugins' option
-		 */
-		if ( is_multisite() ) {
-			$old_blog = $wpdb->blogid;
-			/* Get all blog ids */
-			$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
-			foreach ( $blogids as $blog_id ) {
-				switch_to_blog( $blog_id );
-				$uninstallable_plugins = (array) get_option('uninstall_plugins');
-				unset( $uninstallable_plugins[ plugin_basename( __FILE__ ) ] );
-				update_option('uninstall_plugins', $uninstallable_plugins);
-			}
-			switch_to_blog( $old_blog );
-		}
-		/* deprecated (end) */
-
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
 		bws_delete_plugin( plugin_basename( __FILE__ ) );
@@ -362,7 +343,7 @@ register_activation_hook( __FILE__, 'cntctfrmmlt_plugin_activate' );
 add_action( 'admin_menu', 'cntctfrmmlt_admin_menu' );
 /* Hook calls functions for init and admin_init hooks */
 add_action( 'init', 'cntctfrmmlt_init' );
-add_action( 'admin_init', 'cntctfrmmlt_admin_init' );
+add_action( 'admin_init', 'cntctfrmmlt_admin_init', 9 );
 add_action( 'plugins_loaded', 'cntctfrmmlt_plugins_loaded' );
 /* hook for adding scripts and styles */
 add_action( 'admin_enqueue_scripts', 'cntctfrmmlt_scripts' );
