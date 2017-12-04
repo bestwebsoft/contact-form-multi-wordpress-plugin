@@ -6,7 +6,7 @@ Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.2.2
+Version: 1.2.3
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -224,6 +224,7 @@ if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 			$site_url_if_multisite = is_multisite() ? site_url() : '';
 
 			$cntctfrmmlt_count = array();
+
 			if ( $cntctfrmmlt_options_main ) {
 				foreach ( $cntctfrmmlt_options_main['name_id_form'] as $key => $value ) {
 					$cntctfrmmlt_count[ $key ] = $value;
