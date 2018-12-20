@@ -6,7 +6,7 @@ Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.2.3
+Version: 1.2.5
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -90,7 +90,7 @@ if ( ! function_exists( 'cntctfrmmlt_settings_defaults' ) ) {
 		/* Install the option defaults */
 		$cntctfrmmlt_options_main = array(
 			'plugin_option_version' => $cntctfrmmlt_plugin_info["Version"],
-			'name_id_form'	=> array( 1 => 'NEW_FORM' ),
+			'name_id_form'	=> array( 1 => __( 'NEW_FORM', 'contact-form-multi' ) ),
 			'next_id_form'	=> 2,
 			'id_form'		=> 1,
 			'first_install'	=>	strtotime( "now" )
@@ -162,7 +162,7 @@ if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 			$_SESSION['cntctfrmmlt_id_form'] = $cntctfrmmlt_last_key;
 			if ( empty( $cntctfrmmlt_options_main['name_id_form'] ) ) {
 				$cntctfrmmlt_options_main['id_form'] = 1;
-				$cntctfrmmlt_options_main['name_id_form'] = array( 1 => 'NEW_FORM' );
+				$cntctfrmmlt_options_main['name_id_form'] = array( 1 => __( 'NEW_FORM', 'contact-form-multi' ) );
 				$cntctfrmmlt_options_main['next_id_form'] = 2;
 				update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
 				$_SESSION['cntctfrmmlt_id_form'] = 1;

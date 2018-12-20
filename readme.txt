@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
 Requires at least: 3.9
-Tested up to: 4.9.1
-Stable tag: 1.2.3
+Tested up to: 5.0.1
+Stable tag: 1.2.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -111,6 +111,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.2.5 - 20.12.2018 =
+* Update : All functionality has been updated for WordPress 5.0.1.
+
+= V1.2.4 - 12.12.2018 =
+* Bugfix : Fixed small bugs.
+
 = V1.2.3 - 04.12.2017 =
 * Update : All functionality has been updated for WordPress 4.9.1.
 
@@ -191,6 +197,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.2.5 =
+* The compatibility with new WordPress version updated.
+
+= V1.2.4 =
+* Bugs fixed.
 
 = V1.2.3 =
 * The compatibility with new WordPress version updated.
