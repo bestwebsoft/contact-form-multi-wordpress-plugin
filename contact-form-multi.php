@@ -6,13 +6,13 @@ Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.2.5
+Version: 1.2.6
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
 /*
-	@ Copyright 2017  BestWebSoft  ( https://support.bestwebsoft.com )
+	@ Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -272,7 +272,7 @@ if ( ! function_exists( 'cntctfrmmlt_check' ) ) {
 /*Add notises on plugins page if Contact Form plugin is not installed or not active*/
 if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 	function cntctfrmmlt_show_notices() {
-		global $hook_suffix, $cntctfrmmlt_contact_form_not_found, $cntctfrmmlt_contact_form_not_active;
+		global $hook_suffix, $cntctfrmmlt_contact_form_not_found, $cntctfrmmlt_contact_form_not_active, $cntctfrm_plugin_info;
 		if ( $hook_suffix == 'plugins.php' || ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'bws_panel' ) || ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' ) ) ) {
 			if ( '' != $cntctfrmmlt_contact_form_not_found || '' != $cntctfrmmlt_contact_form_not_active ) { ?>
 				<div class="error">
@@ -284,7 +284,12 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 					<p><?php _e( 'Please enable JavaScript in your browser!', 'contact-form-multi' ); ?></p>
 				</div>
 			</noscript>
-		<?php }
+            <?php if ( ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) ) && version_compare( $cntctfrm_plugin_info['Version'] , '4.1.2', '<') ) { ?>
+                <div class="error">
+                    <p><strong><?php  _e( "Contact Form Multi plugin doesn't support your current version of Contact Form plugin. Please update Contact Form plugin to version 4.1.2 or higher.", 'contact-form-multi' ); ?></strong></p>
+                </div>
+            <?php }
+		}
 	}
 }
 

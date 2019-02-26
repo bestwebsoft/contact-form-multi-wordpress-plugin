@@ -21,6 +21,10 @@
 .cntctfrmmlt-nav-tab:hover {
 	background: none repeat scroll 0 0 #fff;
 }
+.nav-tab-wrapper {
+	margin-bottom: 8px ! important;
+	padding-top: 0 ! important;
+}
 /*when the form is active*/
 
 /*delete button styles*/
