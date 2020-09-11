@@ -6,13 +6,13 @@ Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.2.7
+Version: 1.2.8
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
 /*
-	@ Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
+	@ Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -51,14 +51,14 @@ if ( ! function_exists( 'cntctfrmmlt_init' ) ) {
 			$cntctfrmmlt_plugin_info = get_plugin_data( __FILE__ );
 		}
 		/* Function check if plugin is compatible with current WP version  */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '3.9' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cntctfrmmlt_plugin_info, '4.5' );
 	}
 }
 
 /*Function for connecting hooks-(init, admin_init)*/
 if ( ! function_exists( 'cntctfrmmlt_admin_init' ) ) {
 	function cntctfrmmlt_admin_init() {
-		global $bws_plugin_info, $cntctfrmmlt_plugin_info;
+		global $bws_plugin_info, $cntctfrmmlt_plugin_info, $pagenow, $cntctfrmmlt_options;
 
 		/* Add variable for bws_menu */
 		if ( empty( $bws_plugin_info ) )
@@ -73,7 +73,14 @@ if ( ! function_exists( 'cntctfrmmlt_admin_init' ) ) {
 			/*register main options function*/
 			cntctfrmmlt_main_options();
 		}
-	}
+		if ( 'plugins.php' == $pagenow ) {
+			/* Install the option defaults */
+			if ( function_exists( 'bws_plugin_banner_go_pro' ) ) {
+			    cntctfrmmlt_settings_defaults();
+				bws_plugin_banner_go_pro( $cntctfrmmlt_options, $cntctfrmmlt_plugin_info, 'cntctfrmmlt', 'contact-form-multi', '93536843024dbb3360bfa9d6d6a1d297', '123', 'contact-form-multi' );
+			}
+		}
+	}	
 }
 
 if ( ! function_exists( 'cntctfrmmlt_plugins_loaded' ) ) {
@@ -189,13 +196,13 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 		global $cntctfrmmlt_counts, $cntctfrmmlt_j, $cntctfrmmlt_key_form, $cntctfrmmlt_value, $cntctfrmmlt_id_key, $cntctfrmmlt_options_main;
 		check_ajax_referer( plugin_basename( __FILE__ ), 'cntctfrmmlt_ajax_nonce_field' );
 		$cntctfrmmlt_options_main = get_option( 'cntctfrmmlt_options_main' );
-		/*update next_id_form, cntctfrmmlt_id_options*/
+		/*Update next_id_form, cntctfrmmlt_id_options*/
 		if ( isset( $_POST['cntctfrmmlt_key_form'] ) ) {
-			$cntctfrmmlt_id_key = $_POST['cntctfrmmlt_key_form'];
+			$cntctfrmmlt_id_key = intval( $_POST['cntctfrmmlt_key_form'] );
 			$cntctfrmmlt_id_key += 1;
 			$cntctfrmmlt_options_main['next_id_form'] = $cntctfrmmlt_id_key;
-			$cntctfrmmlt_options_main['id_form'] = $_POST['cntctfrmmlt_key_form'];
-			$_SESSION['cntctfrmmlt_id_form'] = $_POST['cntctfrmmlt_key_form'];
+			$cntctfrmmlt_options_main['id_form'] = intval( $_POST['cntctfrmmlt_key_form'] );
+			$_SESSION['cntctfrmmlt_id_form'] = intval( $_POST['cntctfrmmlt_key_form'] );
 		}
 		/*Update name and ID, options*/
 		if ( isset( $_POST['cntctfrmmlt_name_form'] ) ) {
@@ -293,19 +300,6 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 	}
 }
 
-if ( ! function_exists ( 'cntctfrmmlt_plugin_banner' ) ) {
-	function cntctfrmmlt_plugin_banner() {
-		global $hook_suffix;
-		if ( 'plugins.php' == $hook_suffix ) {
-			global $cntctfrmmlt_plugin_info;
-			$cntctfrmmlt_options = get_option( 'cntctfrmmlt_options_main' );
-			if ( isset( $cntctfrmmlt_options['first_install'] ) && strtotime( '-1 week' ) > $cntctfrmmlt_options['first_install'] ) {
-				bws_plugin_banner( $cntctfrmmlt_plugin_info, 'cntctfrmmlt', 'contact-form-multi', '93536843024dbb3360bfa9d6d6a1d297', '123', '//ps.w.org/contact-form-multi/assets/icon-128x128.png' );
-			}
-		}
-	}
-}
-
 /*Function for delete options*/
 if ( ! function_exists ( 'cntctfrmmlt_delete' ) ) {
 	function cntctfrmmlt_delete() {
@@ -359,4 +353,3 @@ add_filter( 'plugin_row_meta', 'cntctfrmmlt_plugin_links', 10, 2 );
 add_action( 'admin_notices', 'cntctfrmmlt_show_notices' );
 /* hooks for ajax */
 add_action( 'wp_ajax_cntctfrmmlt_action', 'cntctfrmmlt_action_callback' );
-add_action( 'admin_notices', 'cntctfrmmlt_plugin_banner' );
