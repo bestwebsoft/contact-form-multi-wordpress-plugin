@@ -6,13 +6,13 @@ Description: Add unlimited number of contact forms to WordPress website.
 Author: BestWebSoft
 Text Domain: contact-form-multi
 Domain Path: /languages
-Version: 1.2.8
+Version: 1.2.9
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
 /*
-	@ Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
+	@ Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -67,7 +67,7 @@ if ( ! function_exists( 'cntctfrmmlt_admin_init' ) ) {
 		/* check for installed and activated Contact Form*/
 		cntctfrmmlt_check();
 
-		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
+		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact-form-plus.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
 			/*register defaults settings function*/
 			cntctfrmmlt_settings_defaults();
 			/*register main options function*/
@@ -136,16 +136,16 @@ if ( ! function_exists( 'cntctfrmmlt_plugin_activate' ) ) {
 /* ads feature the main options */
 if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 	function cntctfrmmlt_main_options() {
-		global $cntctfrmmlt_counts, $cntctfrmmlt_id_form, $key, $cntctfrmmlt_keys, $cntctfrmmlt_last_key, $cntctfrmmlt_options_main, $value;
+		global $cntctfrmmlt_counts, $key, $cntctfrmmlt_keys, $cntctfrmmlt_last_key, $cntctfrmmlt_options_main, $value, $cntctfrmmlt_id_form;
 		$cntctfrmmlt_options_main = get_option( 'cntctfrmmlt_options_main' );
-		if ( ! isset( $_GET['id'] ) )
-			$_SESSION['cntctfrmmlt_id_form'] = $cntctfrmmlt_options_main['id_form'];
-
+		if ( ! isset( $_GET['id'] ) ) {
+            $cntctfrmmlt_id_form = $cntctfrmmlt_options_main['id_form'];
+        }
 		/*Update cntctfrmmlt_id_options in a database*/
-		if ( isset( $_GET['id'] ) )
-			$_SESSION['cntctfrmmlt_id_form'] = $_GET['id'];
-
-		$cntctfrmmlt_options_main['id_form'] = $_SESSION['cntctfrmmlt_id_form'];
+		if ( isset( $_GET['id'] ) ) {
+            $cntctfrmmlt_id_form =  $_GET['id'];
+        }
+		$cntctfrmmlt_options_main['id_form'] = $cntctfrmmlt_id_form;
 		update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
 
 		/*Deleting data from the database after pressing the delete*/
@@ -166,13 +166,13 @@ if ( ! function_exists( 'cntctfrmmlt_main_options' ) ) {
 			$cntctfrmmlt_last_key = end( $cntctfrmmlt_keys );
 			$cntctfrmmlt_options_main['id_form'] = $cntctfrmmlt_last_key;
 			update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
-			$_SESSION['cntctfrmmlt_id_form'] = $cntctfrmmlt_last_key;
+            $cntctfrmmlt_id_form =  $cntctfrmmlt_last_key;
 			if ( empty( $cntctfrmmlt_options_main['name_id_form'] ) ) {
 				$cntctfrmmlt_options_main['id_form'] = 1;
 				$cntctfrmmlt_options_main['name_id_form'] = array( 1 => __( 'NEW_FORM', 'contact-form-multi' ) );
 				$cntctfrmmlt_options_main['next_id_form'] = 2;
 				update_option( 'cntctfrmmlt_options_main', $cntctfrmmlt_options_main );
-				$_SESSION['cntctfrmmlt_id_form'] = 1;
+                $cntctfrmmlt_id_form = 1;
 			}
 		}
 	}
@@ -193,7 +193,7 @@ if ( ! function_exists ( 'cntctfrmmlt_plugin_links' ) ) {
 /*Update array cntctfrmmlt_options_main in a database*/
 if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 	function cntctfrmmlt_action_callback() {
-		global $cntctfrmmlt_counts, $cntctfrmmlt_j, $cntctfrmmlt_key_form, $cntctfrmmlt_value, $cntctfrmmlt_id_key, $cntctfrmmlt_options_main;
+		global $cntctfrmmlt_counts, $cntctfrmmlt_j, $cntctfrmmlt_id_form, $cntctfrmmlt_value, $cntctfrmmlt_id_key, $cntctfrmmlt_options_main;
 		check_ajax_referer( plugin_basename( __FILE__ ), 'cntctfrmmlt_ajax_nonce_field' );
 		$cntctfrmmlt_options_main = get_option( 'cntctfrmmlt_options_main' );
 		/*Update next_id_form, cntctfrmmlt_id_options*/
@@ -202,7 +202,7 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 			$cntctfrmmlt_id_key += 1;
 			$cntctfrmmlt_options_main['next_id_form'] = $cntctfrmmlt_id_key;
 			$cntctfrmmlt_options_main['id_form'] = intval( $_POST['cntctfrmmlt_key_form'] );
-			$_SESSION['cntctfrmmlt_id_form'] = intval( $_POST['cntctfrmmlt_key_form'] );
+            $cntctfrmmlt_id_form = intval( $_POST['cntctfrmmlt_key_form'] );
 		}
 		/*Update name and ID, options*/
 		if ( isset( $_POST['cntctfrmmlt_name_form'] ) ) {
@@ -221,7 +221,7 @@ if ( ! function_exists ( 'cntctfrmmlt_action_callback' ) ) {
 if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 	function cntctfrmmlt_scripts() {
 		global $cntctfrmmlt_plugin_info;
-		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
+		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact-form-plus.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
 
 			wp_enqueue_style( 'cntctfrmml_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array(), $cntctfrmmlt_plugin_info['Version'] );
 			wp_enqueue_script( 'cntctfrmmlt_script', plugins_url( 'js/script.js', __FILE__ ), array(), $cntctfrmmlt_plugin_info['Version'] );
@@ -237,12 +237,19 @@ if ( ! function_exists ( 'cntctfrmmlt_scripts' ) ) {
 					$cntctfrmmlt_count[ $key ] = $value;
 				}
 			}
+            if ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) ) {
+                $plugin_active = '?page=contact_form.php';
+            } else if ( is_plugin_active( 'contact-form-plus/contact-form-plus.php' ) ) {
+                $plugin_active = '?page=contact-form-plus.php';
+            } else if ( is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) ) {
+                $plugin_active = '?page=contact_form_pro.php';
+            }
 
 			$script_vars = array(
 				'cntctfrmmlt_nonce' 			=> wp_create_nonce( plugin_basename( __FILE__ ), 'cntctfrmmlt_ajax_nonce_field' ),
 				'cntctfrmmlt_delete_message' 	=> __( 'Are you sure you want to delete the form?', 'contact-form-multi' ),
 				'cntctfrmmlt_id_form' 			=> $cntctfrmmlt_options_main['id_form'],
-				'cntctfrmmlt_location'			=> $site_url_if_multisite . $_SERVER['PHP_SELF'] . ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) ? '?page=contact_form.php' : '?page=contact_form_pro.php' ),
+				'cntctfrmmlt_location'			=> $site_url_if_multisite . $_SERVER['PHP_SELF'] . $plugin_active,
 				'cntctfrmmlt_action_slug'		=> ( isset( $_GET['action'] ) ? '&action=' . $_GET['action'] : '' ),
 				'cntctfrmmlt_key_id' 			=> $cntctfrmmlt_options_main['next_id_form'],
 				'cntctfrmmlt_count'				=> $cntctfrmmlt_count,
@@ -261,14 +268,14 @@ if ( ! function_exists( 'cntctfrmmlt_check' ) ) {
 
 		$all_plugins = get_plugins();
 
-		if ( ! ( array_key_exists( 'contact-form-plugin/contact_form.php', $all_plugins ) || array_key_exists( 'contact-form-pro/contact_form_pro.php', $all_plugins ) ) ) {
+		if ( ! ( array_key_exists( 'contact-form-plugin/contact_form.php', $all_plugins ) || array_key_exists( 'contact-form-pro/contact_form_pro.php', $all_plugins ) || array_key_exists( 'contact-form-plus/contact-form-plus.php', $all_plugins ) ) ) {
 			$cntctfrmmlt_contact_form_not_found = __( 'Contact Form Plugin has not been found.', 'contact-form-multi' ) . '</br>' . __( 'You should install and activate this plugin for the correct work with Contact Form Multi plugin.', 'contact-form-multi' ) . '</br>' . __( 'You can download Contact Form Plugin from', 'contact-form-multi' ) . ' <a href="' . esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/contact-form/' ) . '" title="' . __( 'Developers website', 'contact-form-multi' ). '"target="_blank">' . __( 'website of plugin Authors', 'contact-form-multi' ) . '</a> ' . __( 'or', 'contact-form-multi' ) . ' <a href="' . esc_url( 'https://wordpress.org' ) .'" title="Wordpress" target="_blank">'. __( 'Wordpress.', 'contact-form-multi' ) . '</a>';
 		} else {
-			if ( ! ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) ) ) {
+			if ( ! ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) || is_plugin_active( 'contact-form-plus/contact-form-plus.php' ) ) ) {
 				$cntctfrmmlt_contact_form_not_active = __( 'Contact Form Plugin is not active.', 'contact-form-multi' ) . '</br>' . __( 'You should activate this plugin for the correct work with Contact Form Multi plugin.', 'contact-form-multi' );
 			}
 			/* old version */
-			if ( ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) && isset( $all_plugins['contact-form-plugin/contact_form.php']['Version'] ) && $all_plugins['contact-form-plugin/contact_form.php']['Version'] < '3.74' ) ||
+			if ( ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) && isset( $all_plugins['contact-form-plugin/contact_form.php']['Version']  ) && $all_plugins['contact-form-plugin/contact_form.php']['Version'] < '3.74' ) ||
 				( is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) && isset( $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] ) && $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] < '1.23' ) ) {
 				$cntctfrmmlt_contact_form_not_found = __( 'Contact Form Plugin has old version.', 'contact-form-multi' ) . '</br>' . __( 'You need to update this plugin for correct work with Contact Form Multi plugin.', 'contact-form-multi' );
 			}
@@ -280,7 +287,7 @@ if ( ! function_exists( 'cntctfrmmlt_check' ) ) {
 if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 	function cntctfrmmlt_show_notices() {
 		global $hook_suffix, $cntctfrmmlt_contact_form_not_found, $cntctfrmmlt_contact_form_not_active, $cntctfrm_plugin_info;
-		if ( $hook_suffix == 'plugins.php' || ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'bws_panel' ) || ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' ) ) ) {
+		if ( $hook_suffix == 'plugins.php' || ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'bws_panel' ) || ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro.php' || $_REQUEST['page'] == 'contact-form-plus.php' ) ) ) {
 			if ( '' != $cntctfrmmlt_contact_form_not_found || '' != $cntctfrmmlt_contact_form_not_active ) { ?>
 				<div class="error">
 					<p><strong><?php _e( 'WARNING:', 'contact-form-multi' ); ?></strong> <?php echo $cntctfrmmlt_contact_form_not_found . $cntctfrmmlt_contact_form_not_active; ?></p>
@@ -291,7 +298,7 @@ if ( ! function_exists( 'cntctfrmmlt_show_notices' ) ) {
 					<p><?php _e( 'Please enable JavaScript in your browser!', 'contact-form-multi' ); ?></p>
 				</div>
 			</noscript>
-            <?php if ( ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) ) && version_compare( $cntctfrm_plugin_info['Version'] , '4.1.2', '<') ) { ?>
+            <?php if ( ( is_plugin_active( 'contact-form-plugin/contact_form.php' ) || is_plugin_active( 'contact-form-pro/contact_form_pro.php' ) || is_plugin_active( 'contact-form-plus/contact-form-plus.php' ) ) && version_compare( $cntctfrm_plugin_info['Version'] , '4.1.2', '<') ) { ?>
                 <div class="error">
                     <p><strong><?php  _e( "Contact Form Multi plugin doesn't support your current version of Contact Form plugin. Please update Contact Form plugin to version 4.1.2 or higher.", 'contact-form-multi' ); ?></strong></p>
                 </div>

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
 Requires at least: 4.5
-Tested up to: 5.5.1
-Stable tag: 1.2.8
+Tested up to: 5.7.2
+Stable tag: 1.2.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,9 @@ Extend your website capabilities with a multiple contact forms today!
 > **NOTE:** Contact Form Multi plugin is an exclusive add-on to the [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9) plugin and it will not work without it.
 
 https://www.youtube.com/watch?v=BlmKUo9QQ5Y
+
+
+[View Demo](https://bestwebsoft.com/demo-for-contact-form-multi/?ref=readme)
 
 = Free Features =
 
@@ -110,6 +113,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. The Contact Form plugin appearance tab with a newly created contact form.
 
 == Changelog ==
+
+= V1.2.9 - 24.05.2021 =
+* Update : All functionality was updated for WordPress 5.7.2.
+* Update : All functionality was updated for Contact Form 4.2.3.
+* Update : BWS Panel section was updated.
+* Bugfix : Bug with a session_start() function call has been fixed.
 
 = V1.2.8 - 11.09.2020 =
 * Update : All functionality has been updated for WordPress 5.5.1.
@@ -207,6 +216,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.2.9 =
+* The compatibility with new WordPress version updated.
+* Bugs fixed.
 
 = V1.2.8 =
 * Plugin optimization completed.
