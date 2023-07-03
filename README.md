@@ -7,6 +7,7 @@
 <p><strong>NOTE:</strong> Contact Form Multi plugin is an exclusive add-on to the <a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=9731bbeeae59e0c2a563276580a4ecd9" rel="nofollow ugc">Contact Form</a> plugin and it will not work without it.</p>
 </blockquote>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
+<p><a href="https://bestwebsoft.com/demo-for-contact-form-multi/?ref=readme" rel="nofollow ugc">View Demo</a></p>
 <h4>Free Features</h4>
 <ul>
 <li>Add an unlimited number of contact forms</li>
@@ -34,8 +35,6 @@
 </ul>
 <h4>Help &amp; Support</h4>
 <p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
-<h4>Affiliate Program</h4>
-<p>Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft — <a href="https://bestwebsoft.com/affiliate/" rel="nofollow">https://bestwebsoft.com/affiliate/</a></p>
 <h4>Translation</h4>
 <ul>
 <li>Russian (ru_RU)</li>

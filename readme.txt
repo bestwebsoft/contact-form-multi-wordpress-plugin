@@ -1,10 +1,10 @@
-=== Contact Form Multi by BestWebSoft ===
+=== Contact Form Multi by BestWebSoft - Multiple Forms Plugin for Single WordPress Website ===
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
-Requires at least: 4.5
-Tested up to: 5.7.2
-Stable tag: 1.2.9
+Requires at least: 5.6
+Tested up to: 6.2
+Stable tag: 1.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,8 +45,8 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
-* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
-* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
+* [[Doc] Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
+* [[Doc] Purchase](https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=msD6J_oSLNQ)
 
 = Help & Support =
@@ -71,7 +71,7 @@ Some of these translations are not complete. We are constantly adding new featur
 2. Activate the plugin via the 'Plugins' menu in WordPress.
 3. Create a page or a post and insert the shortcode [contact_form id=you_form_id] into the text.
 
-[View a PDF version of Step-by-step Instruction on Contact Form Multi Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+[View a PDF version of Step-by-step Instruction on Contact Form Multi Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
 
 https://www.youtube.com/watch?v=msD6J_oSLNQ
 
@@ -104,7 +104,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/)
 
 == Screenshots ==
 
@@ -113,6 +113,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. The Contact Form plugin appearance tab with a newly created contact form.
 
 == Changelog ==
+
+= V1.3.0 - 03.07.2023 =
+* Update : All functionality was updated for WordPress 6.2.
+* Update : All functionality was updated for Contact Form 4.2.5.
+* Update : BWS Panel section was updated.
 
 = V1.2.9 - 24.05.2021 =
 * Update : All functionality was updated for WordPress 5.7.2.
@@ -216,6 +221,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : The ability to change the tiltes of the forms was added.
 
 == Upgrade Notice ==
+
+= V1.3.0 =
+* The compatibility with new WordPress version updated.
+* Plugin optimization completed.
 
 = V1.2.9 =
 * The compatibility with new WordPress version updated.
