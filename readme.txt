@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: contact form add on, cf add on, multi, multiple contact forms, several contact forms, contact form parameters, contact forms, post feedback, contacts, feedback forms, add contact forms, add feedback forms
 Requires at least: 5.6
-Tested up to: 6.2
-Stable tag: 1.3.0
+Tested up to: 6.5
+Stable tag: 1.3.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -113,6 +113,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. The Contact Form plugin appearance tab with a newly created contact form.
 
 == Changelog ==
+
+= V1.3.1 - 13.05.2024 =
+* Update : All functionality was updated for WordPress 6.5.
+* Bugfix : Security fixes.
 
 = V1.3.0 - 03.07.2023 =
 * Update : All functionality was updated for WordPress 6.2.

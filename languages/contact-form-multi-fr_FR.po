@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Contact Form Multi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-13 17:34+0300\n"
-"PO-Revision-Date: 2024-05-13 17:34+0300\n"
+"PO-Revision-Date: 2024-05-13 17:45+0300\n"
 "Last-Translator: \n"
 "Language-Team: BestWebSoft <plugin@bestwebsoft.com>\n"
-"Language: uk\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: contact-form-multi.php:118 contact-form-multi.php:193
 msgid "NEW_FORM"
-msgstr "НОВА_ФОРМА"
+msgstr "NEW_FORM"
 
 #: contact-form-multi.php:212
 msgid "FAQ"
@@ -27,15 +27,15 @@ msgstr "FAQ"
 
 #: contact-form-multi.php:213
 msgid "Support"
-msgstr "Підтримка"
+msgstr "Support"
 
 #: contact-form-multi.php:280
 msgid "Are you sure you want to delete the form?"
-msgstr "Ви впевнені, що хочете видалити форму?"
+msgstr "Êtes-vous sûr de vouloir supprimer le formulaire ?"
 
 #: contact-form-multi.php:305
 msgid "Contact Form Plugin has not been found."
-msgstr "Плагін Contact Form не знайдено."
+msgstr "Contact Form Plugin n'a pas été trouvé."
 
 # @ contact-form-multi
 #: contact-form-multi.php:305
@@ -43,24 +43,24 @@ msgid ""
 "You should install and activate this plugin for the correct work with "
 "Contact Form Multi plugin."
 msgstr ""
-"Вам слід встановити та активувати цей плагін для коректної роботи з плагіном "
-"Contact Form Multi."
+"Vous devez installer et activer ce plugin pour qu'il fonctionne correctement "
+"avec le plugin Contact Form Multi."
 
 #: contact-form-multi.php:305
 msgid "You can download Contact Form Plugin from"
-msgstr "Ви можете завантажити плагін Contact Form з"
+msgstr "Vous pouvez télécharger Contact Form Plugin à partir de"
 
 #: contact-form-multi.php:305
 msgid "Developers website"
-msgstr "Сайт розробників"
+msgstr "Site web des développeurs"
 
 #: contact-form-multi.php:305
 msgid "website of plugin Authors"
-msgstr "сайту авторів плагіну"
+msgstr "site web des auteurs du plugin"
 
 #: contact-form-multi.php:305
 msgid "or"
-msgstr "чи"
+msgstr "ou"
 
 #: contact-form-multi.php:305
 msgid "WordPress."
@@ -68,7 +68,7 @@ msgstr "WordPress."
 
 #: contact-form-multi.php:308
 msgid "Contact Form Plugin is not active."
-msgstr "Плагін Contact Form не активовано."
+msgstr "Le plugin Contact Form n'est pas actif."
 
 # @ contact-form-multi
 #: contact-form-multi.php:308
@@ -76,49 +76,50 @@ msgid ""
 "You should activate this plugin for the correct work with Contact Form Multi "
 "plugin."
 msgstr ""
-"Вам слід активувати цей плагін для коректної роботи з плагіном Contact Form "
-"Multi."
+"Vous devez activer ce plugin pour qu'il fonctionne correctement avec le "
+"plugin Contact Form Multi."
 
 #: contact-form-multi.php:313
 msgid "Contact Form Plugin has old version."
-msgstr "Ви використовуєте плагін Contact Form старої версії."
+msgstr "Contact Form Plugin a une ancienne version."
 
 #: contact-form-multi.php:313
 msgid ""
 "You need to update this plugin for correct work with Contact Form Multi "
 "plugin."
 msgstr ""
-"Вам слід оновити цей плагін для коректної роботи з плагіном Contact Form "
-"Multi."
+"Vous devez mettre à jour ce plugin pour qu'il fonctionne correctement avec "
+"le plugin Contact Form Multi."
 
 #: contact-form-multi.php:328
 msgid "WARNING:"
-msgstr "УВАГА:"
+msgstr "ATTENTION :"
 
 #: contact-form-multi.php:333
 msgid "Please enable JavaScript in your browser!"
-msgstr "Будь ласка, увімкніть JavaScript у вашому браузері!"
+msgstr "Veuillez activer JavaScript dans votre navigateur !"
 
 #: contact-form-multi.php:338
 msgid ""
 "Contact Form Multi plugin doesn't support your current version of Contact "
 "Form plugin. Please update Contact Form plugin to version 4.1.2 or higher."
 msgstr ""
-"Плагін Contact Form Multi не підтримує поточну версію плагіна Contact Form. "
-"Оновіть плагін Contact Form до версії 4.1.2 або вище."
+"Le plugin Contact Form Multi ne supporte pas votre version actuelle du "
+"plugin Contact Form. Veuillez mettre à jour le plugin Contact Form à la "
+"version 4.1.2 ou supérieure."
 
-#~ msgid "requires"
-#~ msgstr "вимагає"
+msgid "requires"
+msgstr "exige"
 
-#~ msgid ""
-#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
-#~ "and try again."
-#~ msgstr ""
-#~ "або вище, ось чому його було деактивовано! Будь ласка, оновіть WordPress "
-#~ "та спробуйте ще раз."
+msgid ""
+"or higher, that is why it has been deactivated! Please upgrade WordPress and "
+"try again."
+msgstr ""
+"ou plus haut, c'est pourquoi il a été désactivé! Veuillez mettre à jour "
+"WordPress et réessayer."
 
-#~ msgid "Back to the WordPress"
-#~ msgstr "Назад до WordPress на"
+msgid "Back to the WordPress"
+msgstr "Retour à WordPress"
 
-#~ msgid "Plugins page"
-#~ msgstr "Сторінку плагінів"
+msgid "Plugins page"
+msgstr "Page des extensions"
